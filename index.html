@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts (Poppins & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Google Material Icons (for search icon) -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=search" />
+
+    <!-- Title -->
+    <title>Home - Trifid Media</title>
+</head>
+
+<body>
+
+    <!-- ================== NAVBAR ================== -->
+    <nav class="h-25 w-full flex fixed z-20 justify-between items-center px-[42px] font-[Poppins]">
+        <!-- Logo -->
+        <img src="./assets/img/logo.png" class="h-12 cursor-pointer" alt="Trifid Media Logo">
+
+        <!-- Desktop Navigation Menu -->
+        <ul class="nav-menu flex gap-[38px] font-semibold text-[15px] max-[1025px]:hidden">
+
+            <!-- Menu Items -->
+            <li class="relative inline-block leading-8 cursor-pointer
+                 after:content-[''] after:absolute after:left-0 after:bottom-0
+                 after:h-[2px] after:bg-black after:w-full">
+                <a href="#">Trifid Media</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer
+                 after:content-[''] after:absolute after:left-0 after:bottom-0
+                 after:h-[2px] after:bg-black hover:after:w-full">
+                <a href="#">Services</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer
+                 after:content-[''] after:absolute after:left-0 after:bottom-0
+                 after:h-[2px] after:bg-black hover:after:w-full">
+                <a href="#">Web/App Design</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer
+                 after:content-[''] after:absolute after:left-0 after:bottom-0
+                 after:h-[2px] after:bg-black hover:after:w-full">
+                <a href="#">TRIFID Club</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer
+                 after:content-[''] after:absolute after:left-0 after:bottom-0
+                 after:h-[2px] after:bg-black hover:after:w-full">
+                <a href="#">Get in touch</a>
+            </li>
+
+            <!-- Search & Hamburger (Desktop) -->
+            <ul class="flex gap-[38px] font-semibold text-[15px] max-[1025px]:hidden">
+                <li class="cursor-pointer relative top-2">
+                    <img class="size-5" src="./assets/icon/dripicons-by-amit-jakhu/SVG/search.svg" alt="search icon">
+                </li>
+
+                <!-- Hamburger Icon -->
+                <li class="hamburger-icon flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+                    <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+                        <span
+                            class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                        <span class="block h-0.5 bg-white rounded"></span>
+                        <span
+                            class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div
+            class="hamburger-icon hidden max-[1025px]:flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+            <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+                <span class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                <span class="block h-0.5 bg-white rounded"></span>
+                <span class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================== HERO SECTION ================== -->
+    <section class="hero-section h-dvh w-full flex justify-center relative items-center overflow-hidden">
+        <div class="hero-containers absolute h-full w-full flex flex-col">
+            <div class="hero-container1 min-h-dvh w-full transition-all">
+            </div>
+            <div class="hero-container2 min-h-dvh w-full transition-all">
+            </div>
+        </div>
+
+        <div id="heroDiv" class=" h-full w-full z-10 flex items-center justify-center flex-col">
+            <!-- Astronaut Image -->
+            <div class="astronaut absolute flex  flex-col justify-center">
+                <img src="./assets/img/astronaut1.png" alt="" class="w-[232px]">
+                <img src="./assets/img/shadow1.png" alt="" class="absolute -bottom-18">
+            </div>
+
+            <!-- Birds Image -->
+            <img src="./assets/img/birds1.png" alt="birds" class="birds w-[469px] absolute top-8/12">
+
+            <!-- Hero Content -->
+            <div class="hero-content font-[Inter] text-white flex z-10 justify-center max-w-[693px] items-center">
+                <div>
+                    <span class="text-[13px] leading-4">2023</span>
+                    <h1 class="text-[101px] leading-[88px] font-bold mt-6 ">Marketing<br> Elevated</h1>
+                </div>
+                <span class="uppercase text-[16px] w-1/3 leading-5 mt-10 text-right">
+                    WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT.
+                </span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ================== SCRIPTS ================== -->
+    <script src="app.js"></script> <!-- Custom JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- TailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!-- GSAP -->
+</body>
+
+</html>
