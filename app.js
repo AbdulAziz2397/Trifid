@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 heroDiv.addEventListener('mousemove', (e) => {
     // Calculate offset based on mouse position (relative to center of screen)
-    let x = (e.clientX / window.innerWidth - 0.5) * 10; // max ±10px
-    let y = (e.clientY / window.innerHeight - 0.5) * 10;
+    let x = (e.clientX / window.innerWidth - 0.5) * 20; // max ±10px
+    let y = (e.clientY / window.innerHeight - 0.5) * 20;
 
     // Animate astronaut
     gsap.to(astronaut, {
