@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /* Hamburger hover effect - move top & bottom lines to right */
-.hamburger-icon:hover > .bars-container > .bars-line {
+.hamburger-icon:hover>.bars-container>.bars-line {
   left: 20px;
 }
 
@@ -12,9 +12,10 @@
   background-size: cover;
   animation: cloudMoving 6s linear forwards;
 }
+
 .hero-container2 {
   background: url(./assets/img/sld2-bg-mirror.png) no-repeat center;
-  background-size: cover;       /* image stretch نہیں ہوگی */
+  background-size: cover;
   background-position: center 25%;
 }
 
@@ -24,7 +25,49 @@
   from {
     background-size: 120%;
   }
+
   to {
     background-size: 100%;
   }
 }
+
+
+/* Blobs in Company profile section  */
+.blob {
+  background: linear-gradient(135deg, #ff6ec7, #7873f5);
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  animation: breathe 5s infinite ease-in-out;
+  position: absolute;
+}
+
+.blob1 {
+  background: #fed332;
+  height: 90%;
+  width: 300px;
+  left: -100px;
+  top: 100px;
+}
+
+.blob2 {
+  background: #04389e;
+  width: 380px;
+  height: 400px;
+  right: -250px;
+  bottom: -60px;
+  z-index: 0;
+}
+
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  }
+
+  50% {
+    transform: scale(1.1);
+    border-radius: 60% 50% 40% 60% / 60% 40% 50% 40%;
+  }
+}
+

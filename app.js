@@ -47,19 +47,24 @@ heroDiv.addEventListener('mousemove', (e) => {
 let isSticky = false; // flag
 
 window.addEventListener('scroll', () => {
+    console.log(window.scrollY)
     if (window.scrollY > 100 && !isSticky) {
-        isSticky = true; // prevent re-trigger
-        navbar.className = "h-25 w-full flex fixed z-20 justify-between items-center px-[42px] font-[Poppins] bg-white shadow-lg";
-        
-        // Animate once
-        gsap.fromTo(navbar, 
-            { y: -100 }, 
+        isSticky = true;
+        navbar.className = "w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-white font-[Poppins]  px-[42px] z-20 max-[1025px]:px-[0px]";
+
+        gsap.fromTo(navbar,
+            { y: -100 },
             { y: 0, duration: 0.8, ease: "power3.out" }
         );
-    } 
-    else if (window.scrollY <= 100 && isSticky) {
-        isSticky = false; // reset flag
-        navbar.className = "h-25 w-full flex fixed z-20 justify-between items-center px-[42px] font-[Poppins] bg-transparent";
+    }
+    if (window.scrollY <= 100 && isSticky && window.scrollY == 0) {
+        isSticky = false;
+        navbar.className = "w-full h-25 flex justify-center fixed items-center max-[1025px]:h-[69px] bg-transparent font-[Poppins]  px-[42px] z-20 max-[1025px]:px-[0px]";
+
+        gsap.fromTo(navbar,
+            { y: -100 },
+            { y: 0, duration: 0.8, ease: "power3.out" }
+        );
     }
 });
 
