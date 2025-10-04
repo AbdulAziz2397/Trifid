@@ -35,13 +35,12 @@
     <title>Home - Trifid Media</title>
 </head>
 
-<body>
+<body class="bg-amber-100">
 
     <!-- ================== NAVBAR ================== -->
     <nav id="navbar"
-        class="w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-transparent font-[Poppins]  px-[42px] z-30 max-[1025px]:px-[0px]">
-        <div
-            class="w-full flex items-center justify-between max-[1025px]:w-[768px] max-[769px]:w-[600px] max-[681px]:w-[420px] max-[481px]:w-[300px]">
+        class="w-full h-[69px] min-[1025px]:h-[100px] flex fixed justify-center items-center bg-transparent font-[Poppins] z-30">
+        <div class="min-w-[300px] min-[480px]:w-[420px] min-[680px]:w-[600px] min-[769px]:w-[768px] min-[1025px]:w-full min-[1025px]:px-[42px]  flex items-center justify-between relative">
             <!-- Logo -->
 
             <div>
@@ -49,7 +48,7 @@
             </div>
 
             <!-- Desktop Navigation Menu -->
-            <ul class="nav-menu flex gap-[38px] font-semibold text-[15px] max-[1025px]:hidden">
+            <ul class="nav-menu flex max-[1024px]:hidden gap-[38px] font-semibold text-[15px] ">
 
                 <!-- Menu Items -->
                 <li class="relative inline-block leading-8 cursor-pointer
@@ -84,7 +83,7 @@
 
                 <!-- Search & Hamburger (Desktop) -->
                 <li>
-                    <ul class="flex gap-[38px] font-semibold text-[15px] max-[1025px]:hidden">
+                    <ul class="flex gap-[38px] font-semibold text-[15px] max-[1024px]:hidden">
                         <li class="cursor-pointer relative top-2">
                             <img class="size-5" src="./assets/icon/dripicons-by-amit-jakhu/SVG/search.svg"
                                 alt="search icon">
@@ -102,12 +101,41 @@
                         </li>
                     </ul>
                 </li>
+                <li class="fixed top-0 h-dvh bg-white w-[430px] -right-[430px] z-10 ">
+                </li>
             </ul>
 
+            <!-- Mobile Navigation Menu -->
+            <div class="mobile-menu fixed top-[69px] left-0 w-full bg-white overflow-hidden transition-all duration-700 z-20 h-0 flex justify-center items-start min-[1025px]:hidden">
+                <ul class="nav-menu min-w-[300px]  min-[480px]:w-[420px] min-[680px]:w-[600px] min-[769px]:w-[768px] flex flex-col font-semibold text-[15px]">
+
+                    <!-- Menu Items -->
+                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                        <a href="#">Trifid Media</a>
+                    </li>
+
+                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                        <a href="#">Services</a>
+                    </li>
+
+                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b ">
+                        <a href="#">Web/App Design</a>
+                    </li>
+
+                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                        <a href="#">TRIFID Club</a>
+                    </li>
+
+                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                        <a href="#">Get in touch</a>
+                    </li>
+                </ul>
+            </div>
+
             <!-- Hamburger Icon (Mobile) -->
-            <div
-                class="hamburger-icon hidden max-[1025px]:flex items-center justify-center bg-black cursor-pointer w-8 h-8">
-                <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+            <div id="hamburger"
+                class="hamburger-icon hidden max-[1024px]:flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+                <div  class=" bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
                     <span
                         class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
                     <span class="block h-0.5 bg-white rounded"></span>
@@ -119,7 +147,7 @@
     </nav>
 
     <!-- ================== HERO SECTION ================== -->
-    <section class="hero-section h-dvh w-full flex justify-center relative items-center overflow-hidden">
+    <!-- <section class="hero-section h-dvh w-full flex justify-center relative items-center overflow-hidden">
         <div class="hero-containers absolute h-full w-full flex flex-col">
             <div class="hero-container1 min-h-dvh w-full transition-all">
             </div>
@@ -127,18 +155,18 @@
             </div>
         </div>
 
-        <div id="heroDiv" class=" h-full w-full z-10 flex items-center justify-center flex-col">
-            <!-- Astronaut Image -->
-            <div class="astronaut absolute flex  flex-col justify-center">
+        <div id="heroDiv" class=" h-full w-full z-10 flex items-center justify-center flex-col"> -->
+    <!-- Astronaut Image -->
+    <!-- <div class="astronaut absolute flex  flex-col justify-center">
                 <img src="./assets/img/astronaut1.png" alt="" class="w-[232px]">
                 <img src="./assets/img/shadow1.png" alt="" class="absolute -bottom-18">
-            </div>
+            </div> -->
 
-            <!-- Birds Image -->
-            <img src="./assets/img/birds1.png" alt="birds" class="birds w-[469px] absolute top-8/12">
+    <!-- Birds Image -->
+    <!-- <img src="./assets/img/birds1.png" alt="birds" class="birds w-[469px] absolute top-8/12"> -->
 
-            <!-- Hero Content -->
-            <div class="hero-content font-[Inter] text-white flex z-10 justify-center max-w-[693px] items-center">
+    <!-- Hero Content -->
+    <!-- <div class="hero-content font-[Inter] text-white flex z-10 justify-center max-w-[693px] items-center">
                 <div>
                     <span class="text-[13px] leading-4">2023</span>
                     <h1 class="text-[100px] leading-[120px] font-bold mt-6 ">Marketing<br> Elevated</h1>
@@ -148,10 +176,10 @@
                 </span>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ================== COMPANY PROFILE SECTION ================== -->
-    <section class="companyProfile-section h-dvh w-full px-[120px] grid grid-cols-2 relative overflow-hidden">
+    <!-- <section class="companyProfile-section h-dvh w-full px-[120px] grid grid-cols-2 relative overflow-hidden">
         <div class="flex flex-col items-start pt-[80px] z-10">
             <h1 class="text-[115px] font-bold leading-28 mb-10"> New <br /> Generation </h1>
             <span class="text-[17px] font-normal mb-10">WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT. OUR
@@ -169,69 +197,80 @@
         </div>
         <div class="blob blob1 z-0"></div>
         <div class="blob blob2 z-0"></div>
-    </section>
+    </section> -->
 
-    <!-- ================== Images in Phone  ================== -->
+    <!-- ================== Images in Phone ================== -->
 
-    <div id="bigBox" class="flex justify-center items-center text-white font-[Poppins] gap-10 my-20">
-        <div class="w-68 flex flex-col gap-10">
-            <div>
-                <h2 class="text-[40px] font-bold mb-3 border-b-4 leading-14">01</h2>
-                <div class="pl-14">
+    <!--  <div id="bigBox" class="big-box flex justify-center items-center text-white font-[Poppins] gap-10 my-20"> -->
 
-                    <span class="text-[16px]">Content Production and 3D</span>
+    <!-- Left Column -->
+    <!-- <div class="services-col services-col-left w-68 flex flex-col gap-10">
+
+            <div class="service-item service-item-1">
+                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">01</h2>
+                <div class="service-text pl-14">
+                    <span class="service-title text-[16px]">Content Production and 3D</span>
                 </div>
             </div>
-            <div>
-                <h2 class="text-[40px] font-bold mb-3 border-b-4 leading-14">02</h2>
-                <div class="pl-14">
 
-                    <span class="text-[16px]">Social Media Management</span>
+            <div class="service-item service-item-2">
+                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">02</h2>
+                <div class="service-text pl-14">
+                    <span class="service-title text-[16px]">Social Media Management</span>
                 </div>
             </div>
-            <div>
-                <h2 class="text-[40px] font-bold mb-3 border-b-4 leading-14">03</h2>
-                <div class="pl-14">
 
-                    <span class="text-[16px]">TikTok Management</span>
+            <div class="service-item service-item-3">
+                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">03</h2>
+                <div class="service-text pl-14">
+                    <span class="service-title text-[16px]">TikTok Management</span>
                 </div>
             </div>
-        </div>
-        <img src="./assets/img/object_iphone_1.png" class="w-3xs " alt="">
-        <div class="w-68 flex flex-col gap-10">
-            <div>
-                <h2 class="text-[40px] font-bold mb-3 border-b-4 leading-14">04</h2>
-                <div class="pl-14">
 
-                    <span class="text-[16px]"> CBranding and design</span>
+        </div> -->
+
+    <!-- Middle Image -->
+    <!-- <div class="services-image relative bg-[url('./assets/img/object_iphone_1.png')] py-3 bg-no-repeat bg-contain bg-center flex justify-center items-center w-40 h-80">
+            <img src="./assets/img/1.png" class="iPhone object-cover w-28 transition-all duration-500 ease-in-out" alt="iPhone Image">
+        </div> -->
+
+    <!-- Right Column -->
+    <!-- <div class="services-col services-col-right w-68 flex flex-col gap-10">
+
+            <div class="service-item service-item-4">
+                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">04</h2>
+                <div class="service-text pl-14">
+                    <span class="service-title text-[16px]">Branding and Design</span>
                 </div>
             </div>
-            <div>
-                <h2 class="text-[40px] font-bold mb-3 border-b-4 leading-14">05</h2>
-                <div class="pl-14">
 
-                    <span class="text-[16px]">Web & App Design</span>
+            <div class="service-item service-item-5">
+                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">05</h2>
+                <div class="service-text pl-14">
+                    <span class="service-title text-[16px]">Web & App Design</span>
                 </div>
             </div>
-            <div>
-                <h2 class="text-[40px] font-bold mb-3 border-b-4 leading-14">06</h2>
-                <div class="pl-14">
 
-                    <span class="text-[16px]">Celebrity and Influencer management</span>
+            <div class="service-item service-item-6">
+                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">06</h2>
+                <div class="service-text pl-14">
+                    <span class="service-title text-[16px]">Celebrity and Influencer Management</span>
                 </div>
             </div>
+
         </div>
     </div>
 
-    <div class="h-dvh"></div>
+
+    <div class="h-dvh"></div> -->
 
     <!-- ================== SCRIPTS ================== -->
-    <script src="app.js"></script> <!-- Custom JS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- TailwindCSS -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="app.js"></script> <!-- Custom JS -->
 
 </body>
 

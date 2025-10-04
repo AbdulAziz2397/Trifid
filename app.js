@@ -6,6 +6,21 @@ const birds = document.querySelector(".birds");
 const heroContent = document.querySelector(".hero-content");
 const navbar = document.querySelector('#navbar');
 const bigBox = document.querySelector("#bigBox");
+const hamburger = document.querySelector('#hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+console.log(mobileMenu)
+// --- MOBILE MENU TOGGLE ---
+let menuOpen = false;
+hamburger.addEventListener('click', () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+        mobileMenu.className ="mobile-menu fixed top-[69px] left-0 w-full bg-white overflow-hidden transition-all duration-700 z-20 h-[204px]  flex justify-center items-start ";
+        menuOpen = true;
+    } else {
+        mobileMenu.className = "mobile-menu fixed top-[69px] left-0 w-full bg-white overflow-hidden transition-all duration-700 z-20 h-0  flex justify-center items-start ";
+        menuOpen = false;
+    }
+});
 
 // --- INITIAL ANIMATIONS ---
 document.addEventListener("DOMContentLoaded", () => {
@@ -47,38 +62,38 @@ window.addEventListener('scroll', () => {
 // --- CLIP-PATH SCROLL ANIMATION ---
 gsap.registerPlugin(ScrollTrigger);
 
-const state = { 
-  topDepth: 20,   // Top V depth (initial V)
-  leftSpread: 20, // Left spread
-  rightSpread: 80,// Right spread
-  bottomDepth: 100 // Bottom straight (initially flat)
+const state = {
+    topDepth: 20,   // Top V depth (initial V)
+    leftSpread: 20, // Left spread
+    rightSpread: 80,// Right spread
+    bottomDepth: 100 // Bottom straight (initially flat)
 };
 
 function applyClip() {
-  const clip = `polygon(
+    const clip = `polygon(
     0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
     100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
   )`;
-  bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
+    bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
 }
 applyClip();
 
 // --- Top V -> Straight ---
 gsap.to(state, {
-  topDepth: 0,           // V closes to straight line
-  leftSpread: 0,
-  rightSpread: 100,
-  ease: "none",
-  onUpdate: applyClip,
-  scrollTrigger: { trigger: bigBox, start: "top center", end: "+=150vh", scrub: true }
+    topDepth: 0,           // V closes to straight line
+    leftSpread: 0,
+    rightSpread: 100,
+    ease: "none",
+    onUpdate: applyClip,
+    scrollTrigger: { trigger: bigBox, start: "top center", end: "140vh", scrub: true }
 });
 
 // --- Bottom Straight -> V ---
 gsap.to(state, {
-  bottomDepth: 80,       // Straight turns into V shape
-  ease: "none",
-  onUpdate: applyClip,
-  scrollTrigger: { trigger: bigBox, start: "top center", end: "+=400vh", scrub: true }
+    bottomDepth: 80,       // Straight turns into V shape
+    ease: "none",
+    onUpdate: applyClip,
+    scrollTrigger: { trigger: bigBox, start: "top start", end: "180vh", scrub: true }
 });
 
 
@@ -102,3 +117,30 @@ gsap.to(state, {
         if (!running) { running = true; requestAnimationFrame(tick); }
     }, { passive: false });
 })();
+
+// --- Phone images ---
+const phoneImg = document.querySelector('.iPhone');
+const serviceItems = document.querySelectorAll('.service-item');
+
+serviceItems.forEach((item, index) => {
+    item.addEventListener('mouseenter', () => {
+        // Change phone image
+        phoneImg.src = `./assets/img/${index + 1}.png`;
+
+        // Reduce opacity of all others
+        serviceItems.forEach((el) => {
+            if (el !== item) { el.style.opacity = "0.3"; el.style.transition = "opacity 0.5s ease-in-out"; }
+        });
+
+        // Keep hovered one full bright
+        item.style.opacity = "1";
+        // item.style.transition = "opacity 1s ease-in-out";
+    });
+
+    item.addEventListener('mouseleave', () => {
+        // Reset all opacities
+        serviceItems.forEach((el) => {
+            el.style.opacity = "1";
+        });
+    });
+});
