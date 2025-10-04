@@ -1,156 +1,104 @@
-// Select elements
+// Elements
+const heroDiv = document.querySelector('#heroDiv');
 const heroContainer = document.querySelector(".hero-containers");
 const astronaut = document.querySelector(".astronaut");
 const birds = document.querySelector(".birds");
 const heroContent = document.querySelector(".hero-content");
-const heroDiv = document.querySelector('#heroDiv');
 const navbar = document.querySelector('#navbar');
+const bigBox = document.querySelector("#bigBox");
 
-// Run animation when DOM is loaded
+// --- INITIAL ANIMATIONS ---
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.fromTo(
-        [astronaut, birds, heroContent],
+    gsap.fromTo([astronaut, birds, heroContent],
         { y: 1000 },
         { y: 0, duration: 1, ease: "power3.out", stagger: 0.1 }
     );
-    gsap.fromTo(
-        heroContainer,
+    gsap.fromTo(heroContainer,
         { y: -1000 },
-        { y: 0, duration: 1, ease: "power3.out", stagger: 0.01 }
+        { y: 0, duration: 1, ease: "power3.out" }
     );
 });
 
-
+// --- PARALLAX MOUSE MOVE ---
 heroDiv.addEventListener('mousemove', (e) => {
-    // Calculate offset based on mouse position (relative to center of screen)
-    let x = (e.clientX / window.innerWidth - 0.5) * 20; // max ±10px
-    let y = (e.clientY / window.innerHeight - 0.5) * 20;
+    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+    const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
-    // Animate astronaut
-    gsap.to(astronaut, {
-        duration: 2,
-        x: x,
-        y: y,
-        ease: "power3.out"
-    });
-
-    // Animate birds in opposite direction
-    gsap.to(birds, {
-        duration: 2,
-        x: -x,
-        y: -y,
-        ease: "power3.out"
-    });
+    gsap.to(astronaut, { duration: 2, x, y, ease: "power3.out" });
+    gsap.to(birds, { duration: 2, x: -x, y: -y, ease: "power3.out" });
 });
 
-// On scroll navbar color change
-let isSticky = false; // flag
-
+// --- NAVBAR STICKY ON SCROLL ---
+let isSticky = false;
 window.addEventListener('scroll', () => {
-    console.log(window.scrollY)
+    const atTop = window.scrollY <= 50;
+
     if (window.scrollY > 100 && !isSticky) {
         isSticky = true;
-        navbar.className = "w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-white font-[Poppins]  px-[42px] z-20 max-[1025px]:px-[0px]";
-
-        gsap.fromTo(navbar,
-            { y: -100 },
-            { y: 0, duration: 0.8, ease: "power3.out" }
-        );
-    }
-    if (window.scrollY <= 100 && isSticky && window.scrollY == 0) {
+        navbar.className = "w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-white font-[Poppins] px-[42px] z-20 max-[1025px]:px-[0px]";
+        gsap.fromTo(navbar, { y: -100 }, { y: 0, duration: 0.8, ease: "power3.out" });
+    } else if (atTop && isSticky) {
         isSticky = false;
-        navbar.className = "w-full h-25 flex justify-center fixed items-center max-[1025px]:h-[69px] bg-transparent font-[Poppins]  px-[42px] z-20 max-[1025px]:px-[0px]";
-
-        gsap.fromTo(navbar,
-            { y: -100 },
-            { y: 0, duration: 0.8, ease: "power3.out" }
-        );
+        navbar.className = "w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-transparent font-[Poppins] px-[42px] z-20 max-[1025px]:px-[0px]";
+        gsap.fromTo(navbar, { y: -100 }, { y: 0, duration: 0.8, ease: "power3.out" });
     }
-
 });
 
+// --- CLIP-PATH SCROLL ANIMATION ---
 gsap.registerPlugin(ScrollTrigger);
 
-// state variables for clip-path
-const state = {
-    topDepth: 20,     // middle point of top V
-    leftSpread: 20,   // left slope start
-    rightSpread: 80,  // right slope start
-    bottomDepth: 100  // bottom inverted V (starts flat)
+const state = { 
+  topDepth: 20,   // Top V depth (initial V)
+  leftSpread: 20, // Left spread
+  rightSpread: 80,// Right spread
+  bottomDepth: 100 // Bottom straight (initially flat)
 };
 
-// function to apply updated clip-path
 function applyClip() {
-    const clip = `polygon(
-        0 0,
-        ${state.leftSpread}% 0,
-        50% ${state.topDepth}%,
-        ${state.rightSpread}% 0,
-        100% 0,
-        100% 100%,
-        80% 100%,
-        50% ${state.bottomDepth}%,
-        20% 100%,
-        0 100%
-      )`;
-
-    const el = document.querySelector("#bigBox");
-    el.style.clipPath = clip;
-    el.style.webkitClipPath = clip;
+  const clip = `polygon(
+    0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
+    100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
+  )`;
+  bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
 }
-
 applyClip();
 
-// GSAP animation on scroll
+// --- Top V -> Straight ---
 gsap.to(state, {
-    topDepth: 0,          // top V depth → flat
-    leftSpread: 0,        // left slope 20% → 0%
-    rightSpread: 100,     // right slope 80% → 100%
-    bottomDepth: 80,      // bottom 100% → 80% (inverted V)
-    ease: "none",
-    onUpdate: applyClip,
-    scrollTrigger: {
-        trigger: "#bigBox",
-        start: "top center",
-        end: "+=250vh",
-        scrub: true,
-    }
+  topDepth: 0,           // V closes to straight line
+  leftSpread: 0,
+  rightSpread: 100,
+  ease: "none",
+  onUpdate: applyClip,
+  scrollTrigger: { trigger: bigBox, start: "top center", end: "+=150vh", scrub: true }
 });
 
+// --- Bottom Straight -> V ---
+gsap.to(state, {
+  bottomDepth: 80,       // Straight turns into V shape
+  ease: "none",
+  onUpdate: applyClip,
+  scrollTrigger: { trigger: bigBox, start: "top center", end: "+=400vh", scrub: true }
+});
+
+
+// --- SMOOTH SCROLL ---
 (function smoothScroll({ ease = 0.12, multiplier = 1 } = {}) {
-    let target = window.scrollY || 0;
-    let current = window.scrollY || 0;
-    let rafId = null;
-    let running = false;
+    let target = window.scrollY, current = target, running = false;
 
     function tick() {
-        const diff = target - current;
-        current += diff * ease;
+        current += (target - current) * ease;
         window.scrollTo(0, current);
-
-        if (Math.abs(diff) > 0.5) {
-            rafId = requestAnimationFrame(tick);
-        } else {
-            running = false;
-        }
+        if (Math.abs(target - current) > 0.5) requestAnimationFrame(tick);
+        else running = false;
     }
 
-    function onWheel(e) {
+    window.addEventListener("wheel", (e) => {
         if (e.ctrlKey) return; // ignore pinch zoom
         e.preventDefault();
-
-        let delta = e.deltaY;
-        if (e.deltaMode === 1) delta *= 16; // line -> pixels
-        if (e.deltaMode === 2) delta *= window.innerHeight; // page -> pixels
-
+        let delta = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? window.innerHeight : 1);
         const max = document.documentElement.scrollHeight - window.innerHeight;
         target = Math.max(0, Math.min(max, target + delta * multiplier));
-
-        if (!running) {
-            running = true;
-            rafId = requestAnimationFrame(tick);
-        }
-    }
-
-    window.addEventListener("wheel", onWheel, { passive: false });
+        if (!running) { running = true; requestAnimationFrame(tick); }
+    }, { passive: false });
 })();

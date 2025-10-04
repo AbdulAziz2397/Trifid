@@ -1,49 +1,42 @@
 /* Import Tailwind */
 @import "tailwindcss";
 
-/* Hamburger hover effect - move top & bottom lines to right */
-.hamburger-icon:hover>.bars-container>.bars-line {
+/* -------------------- */
+/* Hamburger Hover Effect */
+.hamburger-icon:hover > .bars-container > .bars-line {
   left: 20px;
 }
 
-/* Hero Section Background */
+/* -------------------- */
+/* Hero Section */
 .hero-container1 {
-  background: url(./assets/img/sld2-bg.jpeg) no-repeat center;
-  background-size: cover;
+  background: url(./assets/img/sld2-bg.jpeg) no-repeat center / cover;
   animation: cloudMoving 6s linear forwards;
 }
 
 .hero-container2 {
-  background: url(./assets/img/sld2-bg-mirror.png) no-repeat center;
-  background-size: cover;
+  background: url(./assets/img/sld2-bg-mirror.png) no-repeat center / cover;
   background-position: center 25%;
 }
 
-
-/* Keyframes for Hero Background Zoom-out */
 @keyframes cloudMoving {
-  from {
-    background-size: 120%;
-  }
-
-  to {
-    background-size: 100%;
-  }
+  from { background-size: 120%; }
+  to   { background-size: 100%; }
 }
 
-
-/* Blobs in Company profile section  */
+/* -------------------- */
+/* Blobs in Company Profile */
 .blob {
-  background: linear-gradient(135deg, #ff6ec7, #7873f5);
+  position: absolute;
   border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
   animation: breathe 5s infinite ease-in-out;
-  position: absolute;
+  background: linear-gradient(135deg, #ff6ec7, #7873f5);
 }
 
 .blob1 {
   background: #fed332;
-  height: 90%;
   width: 300px;
+  height: 90%;
   left: -120px;
   top: 70px;
 }
@@ -53,38 +46,30 @@
   width: 380px;
   height: 400px;
   right: -250px;
-  bottom: 0px;
+  bottom: 0;
   z-index: 0;
 }
 
 @keyframes breathe {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
     border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
   }
-
   50% {
     transform: scale(1.1);
     border-radius: 60% 50% 40% 60% / 60% 40% 50% 40%;
   }
 }
 
-/* Our special div */
+/* -------------------- */
+/* Special Div (BigBox) */
 #bigBox {
   position: relative;
   width: 100%;
   height: 120vh;
-  background: blue;
-  clip-path: polygon(0 0,
-      20% 0,
-      50% 20%,
-      80% 0,
-      100% 0,
-      100% 100%,
-      80% 100%,
-      50% 100%,
-      20% 100%,
-      0 100%);
+  background: #001a8e;
+  clip-path: polygon(
+    0 0, 20% 0, 50% 20%, 80% 0, 100% 0,
+    100% 100%, 80% 100%, 50% 100%, 20% 100%, 0 100%
+  );
 }
