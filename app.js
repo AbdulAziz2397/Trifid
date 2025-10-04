@@ -4,7 +4,7 @@ const astronaut = document.querySelector(".astronaut");
 const birds = document.querySelector(".birds");
 const heroContent = document.querySelector(".hero-content");
 const heroDiv = document.querySelector('#heroDiv');
-const navbar = document.querySelector('#navbar')
+const navbar = document.querySelector('#navbar');
 
 // Run animation when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -66,5 +66,53 @@ window.addEventListener('scroll', () => {
             { y: 0, duration: 0.8, ease: "power3.out" }
         );
     }
+
 });
 
+gsap.registerPlugin(ScrollTrigger);
+
+// state variables for clip-path
+const state = {
+    topDepth: 20,     // middle point of top V
+    leftSpread: 20,   // left slope start
+    rightSpread: 80,  // right slope start
+    bottomDepth: 100  // bottom inverted V (starts flat)
+};
+
+// function to apply updated clip-path
+function applyClip() {
+    const clip = `polygon(
+        0 0,
+        ${state.leftSpread}% 0,
+        50% ${state.topDepth}%,
+        ${state.rightSpread}% 0,
+        100% 0,
+        100% 100%,
+        80% 100%,
+        50% ${state.bottomDepth}%,
+        20% 100%,
+        0 100%
+      )`;
+
+    const el = document.querySelector("#bigBox");
+    el.style.clipPath = clip;
+    el.style.webkitClipPath = clip;
+}
+
+applyClip();
+
+// GSAP animation on scroll
+gsap.to(state, {
+    topDepth: 0,          // top V depth → flat
+    leftSpread: 0,        // left slope 20% → 0%
+    rightSpread: 100,     // right slope 80% → 100%
+    bottomDepth: 80,      // bottom 100% → 80% (inverted V)
+    ease: "none",
+    onUpdate: applyClip,
+    scrollTrigger: {
+        trigger: "#bigBox",
+        start: "top center",
+        end: "+=250vh",
+        scrub: true,
+    }
+});
