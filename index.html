@@ -29,9 +29,12 @@
 <body>
 
     <!-- ================== NAVBAR ================== -->
-    <nav class="h-25 w-full flex fixed z-20 justify-between items-center px-[42px] font-[Poppins]">
+    <nav id="navbar"
+        class="h-25 w-full flex fixed bg-transparent z-20 justify-between items-center px-[42px] font-[Poppins] transition-all duration-300">
         <!-- Logo -->
-        <img src="./assets/img/logo.png" class="h-12 cursor-pointer" alt="Trifid Media Logo">
+        <div>
+            <img src="./assets/img/logo.png" class="h-12 cursor-pointer" alt="Trifid Media Logo">
+        </div>
 
         <!-- Desktop Navigation Menu -->
         <ul class="nav-menu flex gap-[38px] font-semibold text-[15px] max-[1025px]:hidden">
@@ -127,7 +130,25 @@
                 </span>
             </div>
         </div>
+    </section>
 
+    <!-- ================== COMPANY PROFILE SECTION ================== -->
+    <section class="companyProfile-section h-dvh w-full px-[120px] grid grid-cols-2">
+        <div class="flex flex-col items-start pt-[80px]">
+            <h1 class="text-[115px] font-semibold leading-28 mb-10"> New <br /> Generation </h1>
+            <span class="text-[17px] font-normal mb-10">WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT. OUR
+                COMPANY IS CENTERED ON THE IDEA THAT
+                EVERYTHING THAT YOU COULD POSSIBLY NEED IS AVAILABLE UNDER ONE ROOF. FROM CREATIVE CONCEPTUALISATION TO
+                PRODUCTION AND EXECUTION – WE DO IT ALL.
+            </span>
+            <button
+                class="border py-3 px-10 font-semibold text-[15px] font-[poppins] cursor-pointer transition-all duration-500 ease-out  hover:bg-black hover:text-white">
+                Company Profile
+            </button>
+        </div>
+        <div class="flex justify-end h-[400px] mt-[148px]">
+            <img src="./assets/img/h1-img-1.png" alt="">
+        </div>
     </section>
 
     <!-- ================== SCRIPTS ================== -->

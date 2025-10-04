@@ -4,6 +4,7 @@ const astronaut = document.querySelector(".astronaut");
 const birds = document.querySelector(".birds");
 const heroContent = document.querySelector(".hero-content");
 const heroDiv = document.querySelector('#heroDiv');
+const navbar = document.querySelector('#navbar')
 
 // Run animation when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,3 +42,24 @@ heroDiv.addEventListener('mousemove', (e) => {
         ease: "power3.out"
     });
 });
+
+// On scroll navbar color change
+let isSticky = false; // flag
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100 && !isSticky) {
+        isSticky = true; // prevent re-trigger
+        navbar.className = "h-25 w-full flex fixed z-20 justify-between items-center px-[42px] font-[Poppins] bg-white shadow-lg";
+        
+        // Animate once
+        gsap.fromTo(navbar, 
+            { y: -100 }, 
+            { y: 0, duration: 0.8, ease: "power3.out" }
+        );
+    } 
+    else if (window.scrollY <= 100 && isSticky) {
+        isSticky = false; // reset flag
+        navbar.className = "h-25 w-full flex fixed z-20 justify-between items-center px-[42px] font-[Poppins] bg-transparent";
+    }
+});
+
