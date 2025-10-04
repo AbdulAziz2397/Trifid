@@ -116,3 +116,41 @@ gsap.to(state, {
         scrub: true,
     }
 });
+
+(function smoothScroll({ ease = 0.12, multiplier = 1 } = {}) {
+    let target = window.scrollY || 0;
+    let current = window.scrollY || 0;
+    let rafId = null;
+    let running = false;
+
+    function tick() {
+        const diff = target - current;
+        current += diff * ease;
+        window.scrollTo(0, current);
+
+        if (Math.abs(diff) > 0.5) {
+            rafId = requestAnimationFrame(tick);
+        } else {
+            running = false;
+        }
+    }
+
+    function onWheel(e) {
+        if (e.ctrlKey) return; // ignore pinch zoom
+        e.preventDefault();
+
+        let delta = e.deltaY;
+        if (e.deltaMode === 1) delta *= 16; // line -> pixels
+        if (e.deltaMode === 2) delta *= window.innerHeight; // page -> pixels
+
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        target = Math.max(0, Math.min(max, target + delta * multiplier));
+
+        if (!running) {
+            running = true;
+            rafId = requestAnimationFrame(tick);
+        }
+    }
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+})();
