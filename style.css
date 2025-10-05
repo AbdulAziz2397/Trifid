@@ -3,28 +3,26 @@
 
 /* -------------------- */
 /* Hamburger Hover Effect */
-.hamburger-icon:hover > .bars-container > .bars-line {
+/* .hamburger-icon:hover > .bars-container > .bars-line {
   left: 20px;
-}
+} */
 
 /* -------------------- */
 /* Hero Section */
-.hero-container1 {
-  background: url(./assets/img/sld2-bg.jpeg) no-repeat center / cover;
-  animation: cloudMoving 6s linear forwards;
+@keyframes heroMoveIn {
+  from {
+    scale: 1.4;
+  }
+  to {
+    scale: 1;
+  }
 }
 
-.hero-container2 {
-  background: url(./assets/img/sld2-bg-mirror.png) no-repeat center / cover;
-  background-position: center 25%;
+.hero-containers-child {
+  animation: heroMoveIn 6s ease-out forwards;
 }
 
-@keyframes cloudMoving {
-  from { background-size: 120%; }
-  to   { background-size: 100%; }
-}
 
-/* -------------------- */
 /* Blobs in Company Profile */
 .blob {
   position: absolute;
@@ -37,15 +35,15 @@
   background: #fed332;
   width: 300px;
   height: 90%;
-  left: -120px;
+  left: -70%;
   top: 70px;
 }
 
 .blob2 {
   background: #04389e;
   width: 380px;
-  height: 400px;
-  right: -250px;
+  height: 300px;
+  right: -95%;
   bottom: 0;
   z-index: 0;
 }

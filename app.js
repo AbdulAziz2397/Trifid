@@ -8,17 +8,36 @@ const navbar = document.querySelector('#navbar');
 const bigBox = document.querySelector("#bigBox");
 const hamburger = document.querySelector('#hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
-console.log(mobileMenu)
+const barLines = document.querySelectorAll('.bars-line');
+const desktopSideBarHamburger = document.querySelector('.desktop-side-bar-hamburger');
+const desktopSideBarCloser = document.querySelector('.desktop-side-bar-closer');
+
+console.log(barLines)
+// Desktop sidebar toggle
+let desktopSideBarOpen = false;
+desktopSideBarHamburger.addEventListener('click', () => desktopSideBarOpen = true);
+desktopSideBarCloser.addEventListener('click', () => desktopSideBarOpen = false);
+setInterval(() => {
+    if (desktopSideBarOpen) {
+        document.querySelector('de')
+        document.querySelector('.desktop-side-bar').classList.replace('-right-[430px]', 'right-0');
+    } else {
+        document.querySelector('.desktop-side-bar').className = "desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-[430px] -right-[430px] py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700";
+    }
+}, 100);
+
+
 // --- MOBILE MENU TOGGLE ---
 let menuOpen = false;
 hamburger.addEventListener('click', () => {
     menuOpen = !menuOpen;
     if (menuOpen) {
-        mobileMenu.className ="mobile-menu fixed top-[69px] left-0 w-full bg-white overflow-hidden transition-all duration-700 z-20 h-[204px]  flex justify-center items-start ";
-        menuOpen = true;
+        mobileMenu.classList.replace("-translate-y-full", "translate-y-0");
+        barLines.forEach(line => line.classList.replace("left-0", "left-5"));
+
     } else {
-        mobileMenu.className = "mobile-menu fixed top-[69px] left-0 w-full bg-white overflow-hidden transition-all duration-700 z-20 h-0  flex justify-center items-start ";
-        menuOpen = false;
+        mobileMenu.classList.replace("translate-y-0", "-translate-y-full");
+        barLines.forEach(line => line.classList.replace('left-5', "left-0"));
     }
 });
 
@@ -26,10 +45,10 @@ hamburger.addEventListener('click', () => {
 document.addEventListener("DOMContentLoaded", () => {
     gsap.fromTo([astronaut, birds, heroContent],
         { y: 1000 },
-        { y: 0, duration: 1, ease: "power3.out", stagger: 0.1 }
+        { y: 20, duration: 1.2, ease: "power3.out", stagger: 0.1 }
     );
     gsap.fromTo(heroContainer,
-        { y: -1000 },
+        { y: -2000 },
         { y: 0, duration: 1, ease: "power3.out" }
     );
 });
@@ -45,19 +64,23 @@ heroDiv.addEventListener('mousemove', (e) => {
 
 // --- NAVBAR STICKY ON SCROLL ---
 let isSticky = false;
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', ()=>{
     const atTop = window.scrollY <= 50;
+    navbarSticky(atTop);
+});
 
+
+let navbarSticky = ( atTop ) => {
     if (window.scrollY > 100 && !isSticky) {
         isSticky = true;
-        navbar.className = "w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-white font-[Poppins] px-[42px] z-20 max-[1025px]:px-[0px]";
+        navbar.classList.replace('bg-transparent', 'bg-white');
         gsap.fromTo(navbar, { y: -100 }, { y: 0, duration: 0.8, ease: "power3.out" });
     } else if (atTop && isSticky) {
         isSticky = false;
-        navbar.className = "w-full h-25 flex fixed justify-center items-center max-[1025px]:h-[69px] bg-transparent font-[Poppins] px-[42px] z-20 max-[1025px]:px-[0px]";
+        navbar.classList.replace('bg-white', 'bg-transparent');
         gsap.fromTo(navbar, { y: -100 }, { y: 0, duration: 0.8, ease: "power3.out" });
     }
-});
+};
 
 // --- CLIP-PATH SCROLL ANIMATION ---
 gsap.registerPlugin(ScrollTrigger);
@@ -69,14 +92,14 @@ const state = {
     bottomDepth: 100 // Bottom straight (initially flat)
 };
 
-function applyClip() {
-    const clip = `polygon(
-    0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
-    100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
-  )`;
-    bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
-}
-applyClip();
+// function applyClip() {
+//     const clip = `polygon(
+//     0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
+//     100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
+//   )`;
+//     bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
+// }
+// applyClip();
 
 // --- Top V -> Straight ---
 gsap.to(state, {
@@ -84,7 +107,7 @@ gsap.to(state, {
     leftSpread: 0,
     rightSpread: 100,
     ease: "none",
-    onUpdate: applyClip,
+    // onUpdate: applyClip,
     scrollTrigger: { trigger: bigBox, start: "top center", end: "140vh", scrub: true }
 });
 
@@ -92,7 +115,7 @@ gsap.to(state, {
 gsap.to(state, {
     bottomDepth: 80,       // Straight turns into V shape
     ease: "none",
-    onUpdate: applyClip,
+    // onUpdate: applyClip,
     scrollTrigger: { trigger: bigBox, start: "top start", end: "180vh", scrub: true }
 });
 

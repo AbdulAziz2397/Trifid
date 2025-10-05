@@ -29,26 +29,38 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=search" />
 
+    <!-- Fontawesom CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- TailwindCSS -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- GSAP ScrollTrigger -->
+
     <!-- Title -->
-
-
     <title>Home - Trifid Media</title>
 </head>
 
-<body class="bg-amber-100">
+<body>
 
     <!-- ================== NAVBAR ================== -->
     <nav id="navbar"
         class="w-full h-[69px] min-[1025px]:h-[100px] flex fixed justify-center items-center bg-transparent font-[Poppins] z-30">
-        <div class="min-w-[300px] min-[480px]:w-[420px] min-[680px]:w-[600px] min-[769px]:w-[768px] min-[1025px]:w-full min-[1025px]:px-[42px]  flex items-center justify-between relative">
+        <div
+            class=" w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] min-[1025px]:px-[42px]  flex items-center justify-between relative">
             <!-- Logo -->
 
-            <div>
+            <div class="relative">
                 <img src="./assets/img/logo.png" class="h-12 cursor-pointer" alt="Trifid Media Logo">
             </div>
 
             <!-- Desktop Navigation Menu -->
-            <ul class="nav-menu flex max-[1024px]:hidden gap-[38px] font-semibold text-[15px] ">
+            <ul class="nav-menu hidden lg:flex gap-[38px] font-semibold text-[15px] ">
 
                 <!-- Menu Items -->
                 <li class="relative inline-block leading-8 cursor-pointer
@@ -83,121 +95,227 @@
 
                 <!-- Search & Hamburger (Desktop) -->
                 <li>
-                    <ul class="flex gap-[38px] font-semibold text-[15px] max-[1024px]:hidden">
+                    <ul class="gap-10 font-semibold text-sm hidden lg:flex">
                         <li class="cursor-pointer relative top-2">
                             <img class="size-5" src="./assets/icon/dripicons-by-amit-jakhu/SVG/search.svg"
                                 alt="search icon">
                         </li>
 
                         <!-- Hamburger Icon -->
-                        <li class="hamburger-icon flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+                        <li
+                            class="hamburger-icon desktop-side-bar-hamburger flex items-center justify-center bg-black cursor-pointer size-8">
                             <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
                                 <span
-                                    class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                                    class="relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
                                 <span class="block h-0.5 bg-white rounded"></span>
                                 <span
-                                    class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                                    class="relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
                             </div>
                         </li>
                     </ul>
                 </li>
-                <li class="fixed top-0 h-dvh bg-white w-[430px] -right-[430px] z-10 ">
+                <li
+                    class="desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-[430px] -right-[430px] py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700">
+                    <span
+                        class="desktop-side-bar-closer size-8 flex justify-center items-center relative -top-8 -right-[150px] bg-[#000000] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
+                        <i class="fa-solid fa-xmark text-xl text-white"></i>
+                    </span>
+                    <img src="./assets/img/TrifidLogoWhte.png" class="w-62" alt="">
+                    <span class="uppercase text-[16px] leading-5 w-46 font-normal">
+                        WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT.
+                    </span>
+                    <span
+                        class="size-10 flex justify-center items-center rounded-full bg-[#00000042] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
+                        <i class="fa-brands fa-instagram text-2xl text-white"></i>
+                    </span>
                 </li>
             </ul>
 
-            <!-- Mobile Navigation Menu -->
-            <div class="mobile-menu fixed top-[69px] left-0 w-full bg-white overflow-hidden transition-all duration-700 z-20 h-0 flex justify-center items-start min-[1025px]:hidden">
-                <ul class="nav-menu min-w-[300px]  min-[480px]:w-[420px] min-[680px]:w-[600px] min-[769px]:w-[768px] flex flex-col font-semibold text-[15px]">
-
-                    <!-- Menu Items -->
-                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-                        <a href="#">Trifid Media</a>
-                    </li>
-
-                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-                        <a href="#">Services</a>
-                    </li>
-
-                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b ">
-                        <a href="#">Web/App Design</a>
-                    </li>
-
-                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-                        <a href="#">TRIFID Club</a>
-                    </li>
-
-                    <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-                        <a href="#">Get in touch</a>
-                    </li>
-                </ul>
-            </div>
-
             <!-- Hamburger Icon (Mobile) -->
             <div id="hamburger"
-                class="hamburger-icon hidden max-[1024px]:flex items-center justify-center bg-black cursor-pointer w-8 h-8">
-                <div  class=" bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
-                    <span
-                        class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
-                    <span class="block h-0.5 bg-white rounded"></span>
-                    <span
-                        class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
-                </div>
+            class="hamburger-icon relative hidden max-[1024px]:flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+            <div class=" bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+                <span
+                class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                <span class="block h-0.5 bg-white rounded"></span>
+                <span
+                class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<!-- Mobile Navigation Menu -->
+<div
+    class="mobile-menu fixed pt-[70px] top-0 left-0 w-full -translate-y-full bg-white overflow-hidden transition-all duration-700 z-20  flex justify-center items-start lg:hidden">
+    <ul
+        class="nav-menu-mobile w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] flex flex-col font-semibold text-[15px]">
+
+        <!-- Menu Items -->
+        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+            <a href="#">Trifid Media</a>
+        </li>
+
+        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+            <a href="#">Services</a>
+        </li>
+
+        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b ">
+            <a href="#">Web/App Design</a>
+        </li>
+
+        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+            <a href="#">TRIFID Club</a>
+        </li>
+
+        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+            <a href="#">Get in touch</a>
+        </li>
+    </ul>
+</div>
 
     <!-- ================== HERO SECTION ================== -->
-    <!-- <section class="hero-section h-dvh w-full flex justify-center relative items-center overflow-hidden">
-        <div class="hero-containers absolute h-full w-full flex flex-col">
-            <div class="hero-container1 min-h-dvh w-full transition-all">
-            </div>
-            <div class="hero-container2 min-h-dvh w-full transition-all">
+    <section class="hero-section h-dvh w-full flex justify-center relative items-center overflow-hidden">
+        <div class="hero-containers absolute h-dvh w-full flex ">
+            <div class="hero-containers-child w-full h-[200vh] flex flex-col justify-between">
+                <div
+                    class="hero-container1 bg-[url('./assets/img/sld2-bg.jpeg')] bg-cover bg-center bg-no-repeat h-dvh w-full">
+                </div>
+                <div
+                    class="hero-container2 bg-[url('./assets/img/sld2-bg-mirror.png')] bg-cover bg-center bg-no-repeat h-dvh w-full">
+                </div>
             </div>
         </div>
 
-        <div id="heroDiv" class=" h-full w-full z-10 flex items-center justify-center flex-col"> -->
-    <!-- Astronaut Image -->
-    <!-- <div class="astronaut absolute flex  flex-col justify-center">
-                <img src="./assets/img/astronaut1.png" alt="" class="w-[232px]">
+        <div id="heroDiv" class=" h-full z-10 flex items-center justify-center max-[480px]:flex-col flex-row
+        w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] 
+        ">
+            <!-- Astronaut Image -->
+            <div class="astronaut absolute flex flex-col justify-center">
+                <img src="./assets/img/astronaut1.png" alt=""
+                    class="w-full max-w-[380px] max-[320px]:w-[150px] max-[480px]:w-[170px] max-[768px]:w-[180px] max-[1024px]:w-[190px] max-[1440px]:w-[230px] max-[1920px]:w-[280px]">
                 <img src="./assets/img/shadow1.png" alt="" class="absolute -bottom-18">
-            </div> -->
+            </div>
 
-    <!-- Birds Image -->
-    <!-- <img src="./assets/img/birds1.png" alt="birds" class="birds w-[469px] absolute top-8/12"> -->
+            <!-- Birds Image -->
+            <img src="./assets/img/birds1.png" alt="birds"
+                class="birds absolute top-8/12 w-full max-w-[600px] max-[320px]:w-[280px] max-[480px]:w-[320px] max-[768px]:w-[440px] max-[1024px]:w-[580px] max-[1440px]:w-[600px] max-[1920px]:w-[620px]">
 
-    <!-- Hero Content -->
-    <!-- <div class="hero-content font-[Inter] text-white flex z-10 justify-center max-w-[693px] items-center">
-                <div>
-                    <span class="text-[13px] leading-4">2023</span>
-                    <h1 class="text-[100px] leading-[120px] font-bold mt-6 ">Marketing<br> Elevated</h1>
+            <!-- Hero Content -->
+            <div class="hero-content font-[Inter] text-white flex justify-between items-center z-10
+                        max-[480px]:flex-col 
+                        gap-7
+                        ">
+
+                <!-- Left Section -->
+                <div class="mr-auto max-[480px]:mr-auto">
+                    <span class="block text-[26px]
+                        max-[480px]:text-[11px] max-[480px]:leading-[14px]
+                        max-[780px]:text-[16px] max-[780px]:leading-[20px]
+                        max-[1024px]:text-[18px] max-[1024px]:leading-[24px]
+                        max-[1440px]:text-[20px] max-[1440px]:leading-[26px]
+                        
+                        ">
+                        2023
+                    </span>
+
+                    <h1 class="
+                        font-bold mt-4
+                        text-[150px] leading-[160px]
+                        max-[320px]:text-[33px] max-[320px]:leading-[36px]
+                        max-[480px]:text-[45px] max-[480px]:leading-[50px]
+                        md:text-[60px] max-[768px]:leading-[68px]
+                        lg:text-[70px] max-[1024px]:leading-[80px]
+                        xl:text-[80px] 2xl:leading-[90px]
+                        max-[1920px]:text-[130px] max-[1920px]:leading-[140px]
+                        ">
+                        Marketing<br>Elevated
+                    </h1>
                 </div>
-                <span class="uppercase text-[16px] w-1/2 leading-5 mt-10 text-right">
+
+                <!-- Right Section -->
+                <span class="uppercase text-right ml-auto 
+                        text-[26px] leading-[36px]
+                        max-[1440px]:text-[16px] max-[1440px]:leading-[20px]
+                        max-[1024px]:text-[16px] max-[1024px]:leading-[20px]
+                        max-[768px]:text-[14px] max-[768px]:leading-[18px]
+                        max-[480px]:text-[11px] max-[480px]:leading-[14px]
+                        text-wrap
+                        max-[1024px]:max-w-[400px]
+                        ">
                     WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT.
                 </span>
             </div>
-        </div>
-    </section> -->
+
+    </section>
 
     <!-- ================== COMPANY PROFILE SECTION ================== -->
-    <!-- <section class="companyProfile-section h-dvh w-full px-[120px] grid grid-cols-2 relative overflow-hidden">
-        <div class="flex flex-col items-start pt-[80px] z-10">
-            <h1 class="text-[115px] font-bold leading-28 mb-10"> New <br /> Generation </h1>
-            <span class="text-[17px] font-normal mb-10">WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT. OUR
-                COMPANY IS CENTERED ON THE IDEA THAT
-                EVERYTHING THAT YOU COULD POSSIBLY NEED IS AVAILABLE UNDER ONE ROOF. FROM CREATIVE CONCEPTUALISATION TO
-                PRODUCTION AND EXECUTION – WE DO IT ALL.
-            </span>
-            <button
-                class="border border-black py-3 px-10 font-semibold text-[15px] font-[poppins] cursor-pointer transition-all duration-500 ease-out  hover:bg-black hover:text-white">
-                Company Profile
-            </button>
+    <section class="companyProfile-section h-auto w-full flex justify-center relative overflow-hidden 
+         
+         ">
+        <div class="w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] 
+         max-[768px]:flex-col
+         flex justify-center items-center
+        ">
+
+
+            <!-- Left Content -->
+            <div class="flex flex-col justify-center items-start pt-[80px] z-10 w-full
+           max-[320px]:w-[288px]
+           max-[480px]:w-[340px]
+           max-[680px]:w-[450px]
+           max-[768px]:w-[600px]
+           max-[1024px]:w-[780px]
+           max-[1440px]:w-[1000px]
+           max-[1920px]:w-[1200px]">
+
+                <!-- Heading -->
+                <h1 class="
+      font-bold mb-10
+      text-[120px] leading-[130px]
+      max-[320px]:text-[50px] max-[320px]:leading-[55px]
+      max-[480px]:text-[45px] max-[480px]:leading-[50px]
+      max-[768px]:text-[60px] max-[768px]:leading-[68px]
+      max-[1024px]:text-[80px] max-[1024px]:leading-[88px]
+      max-[1440px]:text-[100px] max-[1440px]:leading-[110px]
+      max-[1920px]:text-[115px] max-[1920px]:leading-[125px]
+    ">
+                    New <br /> Generation
+                </h1>
+
+                <!-- Description -->
+                <span class="
+      font-normal mb-10 text-left
+      text-[18px] leading-[20px]
+    ">
+                    WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT. OUR COMPANY IS CENTERED ON THE IDEA THAT
+                    EVERYTHING THAT YOU COULD POSSIBLY NEED IS AVAILABLE UNDER ONE ROOF. FROM CREATIVE CONCEPTUALISATION
+                    TO
+                    PRODUCTION AND EXECUTION – WE DO IT ALL.
+                </span>
+
+                <!-- Button -->
+                <button class="border border-black py-3 px-10 font-semibold text-[14px] font-[poppins] cursor-pointer
+             transition-all duration-500 ease-out hover:bg-black hover:text-white
+             max-[480px]:py-2 max-[480px]:px-6 max-[480px]:text-[13px]
+             max-[768px]:text-[14px]
+             max-[1440px]:text-[15px]
+             max-[1920px]:text-[16px]">
+                    Company Profile
+                </button>
+            </div>
+
+            <!-- Right Image -->
+            <div class="flex justify-end items-center h-[350px] mt-[100px] z-10
+              max-[1024px]:h-[300px] max-[768px]:h-[250px] max-[480px]:h-[200px] max-[320px]:h-[180px] mb-30">
+                <img src="./assets/img/h1-img-1.png" alt="">
+            </div>
+
+            <!-- Blobs -->
+            <div class="blob blob1 z-0"></div>
+            <div class="blob blob2 z-0"></div>
         </div>
-        <div class="flex justify-end h-[350px] mt-[100px] z-10">
-            <img src="./assets/img/h1-img-1.png" alt="">
-        </div>
-        <div class="blob blob1 z-0"></div>
-        <div class="blob blob2 z-0"></div>
-    </section> -->
+    </section>
 
     <!-- ================== Images in Phone ================== -->
 
@@ -265,11 +383,6 @@
     <div class="h-dvh"></div> -->
 
     <!-- ================== SCRIPTS ================== -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- TailwindCSS -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="app.js"></script> <!-- Custom JS -->
 
 </body>
