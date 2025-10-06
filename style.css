@@ -1,13 +1,6 @@
 /* Import Tailwind */
 @import "tailwindcss";
 
-/* -------------------- */
-/* Hamburger Hover Effect */
-/* .hamburger-icon:hover > .bars-container > .bars-line {
-  left: 20px;
-} */
-
-/* -------------------- */
 /* Hero Section */
 @keyframes heroMoveIn {
   from {
@@ -25,26 +18,7 @@
 
 /* Blobs in Company Profile */
 .blob {
-  position: absolute;
-  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
-  animation: breathe 5s infinite ease-in-out;
-  background: linear-gradient(135deg, #ff6ec7, #7873f5);
-}
-
-.blob1 {
-  background: #fed332;
-  width: 300px;
-  height: 90%;
-  left: -70%;
-  top: 70px;
-}
-
-.blob2 {
-  background: #04389e;
-  width: 380px;
-  height: 300px;
-  right: -95%;
-  bottom: 0;
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;  animation: breathe 5s infinite ease-in-out;
   z-index: 0;
 }
 

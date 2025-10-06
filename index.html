@@ -49,10 +49,11 @@
 <body>
 
     <!-- ================== NAVBAR ================== -->
-    <nav id="navbar"
-        class="w-full h-[69px] min-[1025px]:h-[100px] flex fixed justify-center items-center bg-transparent font-[Poppins] z-30">
+    <nav id="navbar" class="
+        w-full h-20 lg:h-24
+        flex fixed justify-center items-center bg-transparent font-[Poppins] z-30">
         <div
-            class=" w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] min-[1025px]:px-[42px]  flex items-center justify-between relative">
+            class="max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10  flex items-center justify-between relative">
             <!-- Logo -->
 
             <div class="relative">
@@ -115,7 +116,7 @@
                     </ul>
                 </li>
                 <li
-                    class="desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-[430px] -right-[430px] py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700">
+                    class="desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-sm -right-96 py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700">
                     <span
                         class="desktop-side-bar-closer size-8 flex justify-center items-center relative -top-8 -right-[150px] bg-[#000000] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
                         <i class="fa-solid fa-xmark text-xl text-white"></i>
@@ -133,46 +134,46 @@
 
             <!-- Hamburger Icon (Mobile) -->
             <div id="hamburger"
-            class="hamburger-icon relative hidden max-[1024px]:flex items-center justify-center bg-black cursor-pointer w-8 h-8">
-            <div class=" bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
-                <span
-                class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
-                <span class="block h-0.5 bg-white rounded"></span>
-                <span
-                class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                class="hamburger-icon relative lg:hidden flex items-center justify-center bg-black cursor-pointer w-8 h-8">
+                <div class=" bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+                    <span
+                        class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                    <span class="block h-0.5 bg-white rounded"></span>
+                    <span
+                        class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
+                </div>
             </div>
         </div>
+    </nav>
+
+    <!-- Mobile Navigation Menu -->
+    <div
+        class="mobile-menu fixed pt-[70px] top-0 left-0 w-full -translate-y-full bg-white overflow-hidden transition-all duration-700 z-20  flex justify-center items-start lg:hidden">
+        <ul
+            class="nav-menu-mobile max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 flex flex-col font-semibold text-[15px]">
+
+            <!-- Menu Items -->
+            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                <a href="#">Trifid Media</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                <a href="#">Services</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b ">
+                <a href="#">Web/App Design</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                <a href="#">TRIFID Club</a>
+            </li>
+
+            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
+                <a href="#">Get in touch</a>
+            </li>
+        </ul>
     </div>
-</nav>
-
-<!-- Mobile Navigation Menu -->
-<div
-    class="mobile-menu fixed pt-[70px] top-0 left-0 w-full -translate-y-full bg-white overflow-hidden transition-all duration-700 z-20  flex justify-center items-start lg:hidden">
-    <ul
-        class="nav-menu-mobile w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] flex flex-col font-semibold text-[15px]">
-
-        <!-- Menu Items -->
-        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-            <a href="#">Trifid Media</a>
-        </li>
-
-        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-            <a href="#">Services</a>
-        </li>
-
-        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b ">
-            <a href="#">Web/App Design</a>
-        </li>
-
-        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-            <a href="#">TRIFID Club</a>
-        </li>
-
-        <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
-            <a href="#">Get in touch</a>
-        </li>
-    </ul>
-</div>
 
     <!-- ================== HERO SECTION ================== -->
     <section class="hero-section h-dvh w-full flex justify-center relative items-center overflow-hidden">
@@ -188,18 +189,18 @@
         </div>
 
         <div id="heroDiv" class=" h-full z-10 flex items-center justify-center max-[480px]:flex-col flex-row
-        w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] 
+        max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 
         ">
             <!-- Astronaut Image -->
             <div class="astronaut absolute flex flex-col justify-center">
                 <img src="./assets/img/astronaut1.png" alt=""
-                    class="w-full max-w-[380px] max-[320px]:w-[150px] max-[480px]:w-[170px] max-[768px]:w-[180px] max-[1024px]:w-[190px] max-[1440px]:w-[230px] max-[1920px]:w-[280px]">
+                    class=" max-[639px]:w-36 sm:w-[170px] md:w-[180px] lg:w-[190px] xl:w-[230px] 2xl:w-[280px]">
                 <img src="./assets/img/shadow1.png" alt="" class="absolute -bottom-18">
             </div>
 
             <!-- Birds Image -->
             <img src="./assets/img/birds1.png" alt="birds"
-                class="birds absolute top-8/12 w-full max-w-[600px] max-[320px]:w-[280px] max-[480px]:w-[320px] max-[768px]:w-[440px] max-[1024px]:w-[580px] max-[1440px]:w-[600px] max-[1920px]:w-[620px]">
+                class="birds absolute top-8/12 max-[380px]:w-2xs max-[639px]:w-xs sm:w-sm md:w-md lg:w-xl xl:w-2xl 2xl:w-3xl">
 
             <!-- Hero Content -->
             <div class="hero-content font-[Inter] text-white flex justify-between items-center z-10
@@ -209,40 +210,27 @@
 
                 <!-- Left Section -->
                 <div class="mr-auto max-[480px]:mr-auto">
-                    <span class="block text-[26px]
-                        max-[480px]:text-[11px] max-[480px]:leading-[14px]
-                        max-[780px]:text-[16px] max-[780px]:leading-[20px]
-                        max-[1024px]:text-[18px] max-[1024px]:leading-[24px]
-                        max-[1440px]:text-[20px] max-[1440px]:leading-[26px]
-                        
-                        ">
+                    <span class="block
+                    lg:text-xl               
+                    ">
                         2023
                     </span>
-
                     <h1 class="
-                        font-bold mt-4
-                        text-[150px] leading-[160px]
-                        max-[320px]:text-[33px] max-[320px]:leading-[36px]
-                        max-[480px]:text-[45px] max-[480px]:leading-[50px]
-                        md:text-[60px] max-[768px]:leading-[68px]
-                        lg:text-[70px] max-[1024px]:leading-[80px]
-                        xl:text-[80px] 2xl:leading-[90px]
-                        max-[1920px]:text-[130px] max-[1920px]:leading-[140px]
-                        ">
+                font-bold mt-4
+                lg:text-8xl             
+                md:text-7xl  
+                sm:text-6xl
+                text-5xl
+                ">
                         Marketing<br>Elevated
                     </h1>
                 </div>
 
                 <!-- Right Section -->
                 <span class="uppercase text-right ml-auto 
-                        text-[26px] leading-[36px]
-                        max-[1440px]:text-[16px] max-[1440px]:leading-[20px]
-                        max-[1024px]:text-[16px] max-[1024px]:leading-[20px]
-                        max-[768px]:text-[14px] max-[768px]:leading-[18px]
-                        max-[480px]:text-[11px] max-[480px]:leading-[14px]
-                        text-wrap
-                        max-[1024px]:max-w-[400px]
-                        ">
+                lg:max-w-md
+                max-w-xs
+                ">
                     WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT.
                 </span>
             </div>
@@ -250,44 +238,20 @@
     </section>
 
     <!-- ================== COMPANY PROFILE SECTION ================== -->
-    <section class="companyProfile-section h-auto w-full flex justify-center relative overflow-hidden 
-         
-         ">
-        <div class="w-full max-[320px]:w-[288px] max-[480px]:w-[300px] max-[680px]:w-[420px] max-[768px]:w-[600px] max-[1024px]:w-[768px] 
-         max-[768px]:flex-col
-         flex justify-center items-center
-        ">
-
-
+    <section
+        class="companyProfile-section h-auto min-h-dvh w-full relative border-2 border-black overflow-hidden flex justify-center items-center">
+        <div
+            class="h-full max-w-7xl max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 border-2 border-amber-600 z-10 flex flex-col items-center lg:flex-row lg:justify-between lg:items-center py-20 gap-20">
             <!-- Left Content -->
-            <div class="flex flex-col justify-center items-start pt-[80px] z-10 w-full
-           max-[320px]:w-[288px]
-           max-[480px]:w-[340px]
-           max-[680px]:w-[450px]
-           max-[768px]:w-[600px]
-           max-[1024px]:w-[780px]
-           max-[1440px]:w-[1000px]
-           max-[1920px]:w-[1200px]">
-
+            <div class="flex flex-col justify-center items-start w-full gap-10 sm:pb-20">
                 <!-- Heading -->
-                <h1 class="
-      font-bold mb-10
-      text-[120px] leading-[130px]
-      max-[320px]:text-[50px] max-[320px]:leading-[55px]
-      max-[480px]:text-[45px] max-[480px]:leading-[50px]
-      max-[768px]:text-[60px] max-[768px]:leading-[68px]
-      max-[1024px]:text-[80px] max-[1024px]:leading-[88px]
-      max-[1440px]:text-[100px] max-[1440px]:leading-[110px]
-      max-[1920px]:text-[115px] max-[1920px]:leading-[125px]
-    ">
+                <h1
+                    class="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl leading-tight sm:leading-tight md:leading-snug lg:leading-snug xl:leading-normal">
                     New <br /> Generation
                 </h1>
 
                 <!-- Description -->
-                <span class="
-      font-normal mb-10 text-left
-      text-[18px] leading-[20px]
-    ">
+                <span class="max-w-md font-normal text-left text-sm md:text-lg leading-[20px]">
                     WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT. OUR COMPANY IS CENTERED ON THE IDEA THAT
                     EVERYTHING THAT YOU COULD POSSIBLY NEED IS AVAILABLE UNDER ONE ROOF. FROM CREATIVE CONCEPTUALISATION
                     TO
@@ -295,25 +259,22 @@
                 </span>
 
                 <!-- Button -->
-                <button class="border border-black py-3 px-10 font-semibold text-[14px] font-[poppins] cursor-pointer
-             transition-all duration-500 ease-out hover:bg-black hover:text-white
-             max-[480px]:py-2 max-[480px]:px-6 max-[480px]:text-[13px]
-             max-[768px]:text-[14px]
-             max-[1440px]:text-[15px]
-             max-[1920px]:text-[16px]">
+                <button
+                    class="border border-black py-3 px-10 font-semibold text-[14px] font-[poppins] cursor-pointer transition-all duration-500 ease-out hover:bg-black hover:text-white sm:text-sm md:text-base lg:text-[15px] xl:text-[15px] 2xl:text-[16px]">
                     Company Profile
                 </button>
             </div>
 
             <!-- Right Image -->
-            <div class="flex justify-end items-center h-[350px] mt-[100px] z-10
-              max-[1024px]:h-[300px] max-[768px]:h-[250px] max-[480px]:h-[200px] max-[320px]:h-[180px] mb-30">
+            <div class="flex justify-end items-center h-80 z-10 lg:h-72 md:h-60 sm:h-48 lg:w-full">
                 <img src="./assets/img/h1-img-1.png" alt="">
             </div>
+        </div>
 
-            <!-- Blobs -->
-            <div class="blob blob1 z-0"></div>
-            <div class="blob blob2 z-0"></div>
+        <!-- Blobs -->
+        <div class="blobs-container w-full h-dvh absolute top-0 left-0 z-0 overflow-hidden">
+            <div class="blob blob1 absolute bg-[#fed332] w-72 h-5/6 top-16 -left-55 sm:-left-40 z-0"></div>
+            <div class="blob blob2 absolute bg-[#04389e] w-70 h-80 bottom-0 -right-50 sm:-right-40 z-0"></div>
         </div>
     </section>
 

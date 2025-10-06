@@ -12,20 +12,9 @@ const barLines = document.querySelectorAll('.bars-line');
 const desktopSideBarHamburger = document.querySelector('.desktop-side-bar-hamburger');
 const desktopSideBarCloser = document.querySelector('.desktop-side-bar-closer');
 
-console.log(barLines)
 // Desktop sidebar toggle
-let desktopSideBarOpen = false;
-desktopSideBarHamburger.addEventListener('click', () => desktopSideBarOpen = true);
-desktopSideBarCloser.addEventListener('click', () => desktopSideBarOpen = false);
-setInterval(() => {
-    if (desktopSideBarOpen) {
-        document.querySelector('de')
-        document.querySelector('.desktop-side-bar').classList.replace('-right-[430px]', 'right-0');
-    } else {
-        document.querySelector('.desktop-side-bar').className = "desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-[430px] -right-[430px] py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700";
-    }
-}, 100);
-
+desktopSideBarHamburger.addEventListener('click', () => document.querySelector('.desktop-side-bar').classList.replace('-right-96', 'right-0'));
+desktopSideBarCloser.addEventListener('click', () =>  document.querySelector('.desktop-side-bar').classList.replace('right-0', '-right-96'));
 
 // --- MOBILE MENU TOGGLE ---
 let menuOpen = false;
@@ -64,13 +53,13 @@ heroDiv.addEventListener('mousemove', (e) => {
 
 // --- NAVBAR STICKY ON SCROLL ---
 let isSticky = false;
-window.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', () => {
     const atTop = window.scrollY <= 50;
     navbarSticky(atTop);
 });
 
 
-let navbarSticky = ( atTop ) => {
+let navbarSticky = (atTop) => {
     if (window.scrollY > 100 && !isSticky) {
         isSticky = true;
         navbar.classList.replace('bg-transparent', 'bg-white');
@@ -167,3 +156,14 @@ serviceItems.forEach((item, index) => {
         });
     });
 });
+
+// --- Tailwind custom breakpoint ---
+tailwind.config = {
+    theme: {
+        extend: {
+            screens: {
+                'xs': '320px', // custom min-width breakpoint for 320px
+            },
+        },
+    },
+};
