@@ -280,68 +280,78 @@
 
     <!-- ================== Images in Phone ================== -->
 
-    <!--  <div id="bigBox" class="big-box flex justify-center items-center text-white font-[Poppins] gap-10 my-20"> -->
+    <section id="bigBox"
+        class="big-box w-full overflow-hidden relative min-[800px]:h-[890px] min-h-[890px]  py-30 flex justify-center items-center text-white font-[Poppins] bg-[#001a8e] ">
 
-    <!-- Left Column -->
-    <!-- <div class="services-col services-col-left w-68 flex flex-col gap-10">
+        <div class="max-w-7xl w-full h-full grid min-[800px]:grid-cols-3 items-center gap-10 px-10">
 
-            <div class="service-item service-item-1">
-                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">01</h2>
-                <div class="service-text pl-14">
-                    <span class="service-title text-[16px]">Content Production and 3D</span>
+            <!-- Left Column -->
+            <div class="services-col services-col-left w-full grid grid-cols-1 min-[500px]:grid-cols-3 min-[800px]:flex min-[800px]:flex-col gap-10 order-1">
+
+                <div class="service-item service-item-1">
+                    <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">01</h2>
+                    <div class="service-text pl-14">
+                        <span class="service-title text-[16px]">Content Production and 3D</span>
+                    </div>
                 </div>
+
+                <div class="service-item service-item-2">
+                    <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">02</h2>
+                    <div class="service-text pl-14">
+                        <span class="service-title text-[16px]">Social Media Management</span>
+                    </div>
+                </div>
+
+                <div class="service-item service-item-3">
+                    <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">03</h2>
+                    <div class="service-text pl-14">
+                        <span class="service-title text-[16px]">TikTok Management</span>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="service-item service-item-2">
-                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">02</h2>
-                <div class="service-text pl-14">
-                    <span class="service-title text-[16px]">Social Media Management</span>
-                </div>
+            <!-- Middle Image -->
+            <div class="services-image relative w-full min-h-96 min-[800px]:h-full flex justify-center items-center overflow-hidden min-[800px]:order-2 order-3">
+                <!-- Background or shadow image -->
+                <img src="./assets/img/object_iphone_1.png"
+                    class="absolute inset-0 w-full h-full object-contain scale-100  opacity-80 transition-all duration-500 ease-in-out"
+                    alt="Background object">
+
+                <!-- Foreground (main) iPhone image -->
+                <img src="./assets/img/1.png" id="iPhoneImg"
+                    class="absolute inset-0 w-full h-full object-contain scale-[0.9] min-[800px]:scale-95  min-[1210px]:scale-[0.9] transition-all duration-500 ease-in-out"
+                    alt="iPhone Image">
             </div>
 
-            <div class="service-item service-item-3">
-                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">03</h2>
-                <div class="service-text pl-14">
-                    <span class="service-title text-[16px]">TikTok Management</span>
+
+            <!-- Right Column -->
+            <div class="services-col services-col-right grid grid-cols-1 min-[500px]:grid-cols-3  min-[800px]:flex min-[800px]:flex-col w-full gap-10 min-[800px]:order-3 order-2">
+
+                <div class="service-item service-item-4">
+                    <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">04</h2>
+                    <div class="service-text pl-14">
+                        <span class="service-title text-[16px]">Branding and Design</span>
+                    </div>
                 </div>
-            </div>
 
-        </div> -->
-
-    <!-- Middle Image -->
-    <!-- <div class="services-image relative bg-[url('./assets/img/object_iphone_1.png')] py-3 bg-no-repeat bg-contain bg-center flex justify-center items-center w-40 h-80">
-            <img src="./assets/img/1.png" class="iPhone object-cover w-28 transition-all duration-500 ease-in-out" alt="iPhone Image">
-        </div> -->
-
-    <!-- Right Column -->
-    <!-- <div class="services-col services-col-right w-68 flex flex-col gap-10">
-
-            <div class="service-item service-item-4">
-                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">04</h2>
-                <div class="service-text pl-14">
-                    <span class="service-title text-[16px]">Branding and Design</span>
+                <div class="service-item service-item-5">
+                    <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">05</h2>
+                    <div class="service-text pl-14">
+                        <span class="service-title text-[16px]">Web & App Design</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="service-item service-item-5">
-                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">05</h2>
-                <div class="service-text pl-14">
-                    <span class="service-title text-[16px]">Web & App Design</span>
+                <div class="service-item service-item-6">
+                    <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">06</h2>
+                    <div class="service-text pl-14">
+                        <span class="service-title text-[16px]">Celebrity and Influencer Management</span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="service-item service-item-6">
-                <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">06</h2>
-                <div class="service-text pl-14">
-                    <span class="service-title text-[16px]">Celebrity and Influencer Management</span>
-                </div>
             </div>
-
         </div>
-    </div>
-
-
-    <div class="h-dvh"></div> -->
+    </section>
 
     <!-- ================== SCRIPTS ================== -->
     <script src="app.js"></script> <!-- Custom JS -->

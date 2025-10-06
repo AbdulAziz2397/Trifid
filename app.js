@@ -14,7 +14,7 @@ const desktopSideBarCloser = document.querySelector('.desktop-side-bar-closer');
 
 // Desktop sidebar toggle
 desktopSideBarHamburger.addEventListener('click', () => document.querySelector('.desktop-side-bar').classList.replace('-right-96', 'right-0'));
-desktopSideBarCloser.addEventListener('click', () =>  document.querySelector('.desktop-side-bar').classList.replace('right-0', '-right-96'));
+desktopSideBarCloser.addEventListener('click', () => document.querySelector('.desktop-side-bar').classList.replace('right-0', '-right-96'));
 
 // --- MOBILE MENU TOGGLE ---
 let menuOpen = false;
@@ -75,20 +75,20 @@ let navbarSticky = (atTop) => {
 gsap.registerPlugin(ScrollTrigger);
 
 const state = {
-    topDepth: 20,   // Top V depth (initial V)
+    topDepth: 10,   // Top V depth (initial V)
     leftSpread: 20, // Left spread
     rightSpread: 80,// Right spread
     bottomDepth: 100 // Bottom straight (initially flat)
 };
 
-// function applyClip() {
-//     const clip = `polygon(
-//     0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
-//     100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
-//   )`;
-//     bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
-// }
-// applyClip();
+function applyClip() {
+    const clip = `polygon(
+    0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
+    100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
+  )`;
+    bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
+}
+applyClip();
 
 // --- Top V -> Straight ---
 gsap.to(state, {
@@ -96,15 +96,15 @@ gsap.to(state, {
     leftSpread: 0,
     rightSpread: 100,
     ease: "none",
-    // onUpdate: applyClip,
+    onUpdate: applyClip,
     scrollTrigger: { trigger: bigBox, start: "top center", end: "140vh", scrub: true }
 });
 
 // --- Bottom Straight -> V ---
 gsap.to(state, {
-    bottomDepth: 80,       // Straight turns into V shape
+    bottomDepth: 90,       // Straight turns into V shape
     ease: "none",
-    // onUpdate: applyClip,
+    onUpdate: applyClip,
     scrollTrigger: { trigger: bigBox, start: "top start", end: "180vh", scrub: true }
 });
 
@@ -131,7 +131,7 @@ gsap.to(state, {
 })();
 
 // --- Phone images ---
-const phoneImg = document.querySelector('.iPhone');
+const phoneImg = document.querySelector('#iPhoneImg');
 const serviceItems = document.querySelectorAll('.service-item');
 
 serviceItems.forEach((item, index) => {
