@@ -24,6 +24,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
     <!-- Google Material Icons (for search icon) -->
     <link rel="stylesheet"
@@ -382,7 +383,7 @@
     </section>
 
     <!-- ================ Content Section ================ -->
-    <section class="w-full h-[60vh] lg:h-[80vh] flex justify-center items-center font-[Poppins]">
+    <section class="w-full relative h-[60vh] min-[600px]:h-[80vh] flex justify-center items-center font-[Poppins]">
         <div class="h-full w-full relative">
             <div class="h-full w-full overflow-hidden relative z-0">
                 <!-- Sliding container -->
@@ -395,18 +396,21 @@
                 </div>
             </div>
 
+            <div class="w-full h-full absolute inset-0 bg-black opacity-60 z-10"></div> <!-- Overlay -->
 
             <!-- Optional content -->
-            <div class="flex flex-col justify-center items-center z-10 absolute inset-0 text-center bg-white">
-                <h1 class="font-extrabold text-[clamp(67px, 10vw, 200px)] leading-[1.1] tracking-tight">
-                    Content Is King
-                </h1>
-
+            <div class="absolute inset-0 z-20 w-full  font-['Anton'] bg-white/95 uppercase font-bold text-7xl min-[375px]:text-8xl min-[720px]:text-[148px] lg:text-[160px] xl:text-[180px] 2xl:text-[200px] mix-blend-screen text-center leading-[1.1] tracking-wide  flex flex-col items-center justify-start pt-5 pb-[10vh] border-2">
+                Content <br> Is King
+            </div>
+            <div class="absolute bottom-10 min-[720px]:bottom-5 w-full flex justify-center z-20">
                 <button
-                    class="px-10 py-2 rounded-full border-2 border-[#b9b9b9] hover:border-black font-semibold  transition-all duration-300  hover:bg-white">
+                    class="px-10 py-2 m font-['poppins'] text-lg rounded-full border-2 border-[#b9b9b9] hover:border-black font-semibold transition-all duration-300 hover:bg-white">
                     Our Services
                 </button>
             </div>
+        </div>
+
+
 
         </div>
     </section>
