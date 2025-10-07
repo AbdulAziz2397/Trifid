@@ -11,6 +11,29 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const barLines = document.querySelectorAll('.bars-line');
 const desktopSideBarHamburger = document.querySelector('.desktop-side-bar-hamburger');
 const desktopSideBarCloser = document.querySelector('.desktop-side-bar-closer');
+const overlayRemover = document.querySelector('.overlay-remover');
+
+// Slider images overlay remover
+let overlayRemoverClicked = false;
+const overlay = document.querySelector('.black-transparent-overlay');
+const heading = document.querySelector('.overlay-heading-text');
+const button = document.querySelector('.overlay-button');
+
+overlayRemover.addEventListener('click', () => {
+  overlayRemoverClicked = !overlayRemoverClicked;
+
+  if (overlayRemoverClicked) {
+    // Fade out all overlay elements
+    gsap.to(overlay, { opacity: 0, duration: 0.8, ease: "power2.out" });
+    gsap.to([heading, button], { opacity: 0, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" });
+    document.querySelector('.overlay-remover-icon').classList.replace('fa-arrow-up-right-from-square', 'fa-down-left-and-up-right-to-center');
+  } else {
+    // Fade back in
+    gsap.to(overlay, { opacity: 0.6, duration: 0.8, ease: "power2.inOut" });
+    gsap.to([heading, button], { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.inOut" });
+    document.querySelector('.overlay-remover-icon').classList.replace('fa-down-left-and-up-right-to-center', 'fa-arrow-up-right-from-square');
+  }
+});
 
 // Desktop sidebar toggle
 desktopSideBarHamburger.addEventListener('click', () => document.querySelector('.desktop-side-bar').classList.replace('-right-96', 'right-0'));
@@ -183,7 +206,7 @@ slides.forEach(slide => {
 // Create infinite loop animation
 gsap.to(slider, {
     x: `-${totalWidth}px`,
-    duration: 20,
+    duration: 40,
     ease: "none",
     repeat: -1,
     modifiers: {
