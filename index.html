@@ -239,7 +239,7 @@
 
     <!-- ================== COMPANY PROFILE SECTION ================== -->
     <section
-        class="companyProfile-section h-auto min-h-dvh w-full relative border-2 border-black overflow-hidden flex justify-center items-center">
+        class="companyProfile-section h-auto min-h-dvh w-full relative overflow-hidden flex justify-center items-center">
         <div
             class="h-full max-w-7xl max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 z-10 flex flex-col items-center lg:flex-row lg:justify-between lg:items-center py-20 gap-20">
             <!-- Left Content -->
@@ -286,7 +286,8 @@
         <div class="max-w-7xl w-full h-full grid min-[800px]:grid-cols-3 items-center gap-10 px-10">
 
             <!-- Left Column -->
-            <div class="services-col services-col-left w-full grid grid-cols-1 min-[500px]:grid-cols-3 min-[800px]:flex min-[800px]:flex-col gap-10 order-1">
+            <div
+                class="services-col services-col-left w-full grid grid-cols-1 min-[500px]:grid-cols-3 min-[800px]:flex min-[800px]:flex-col gap-10 order-1">
 
                 <div class="service-item service-item-1">
                     <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">01</h2>
@@ -312,7 +313,8 @@
             </div>
 
             <!-- Middle Image -->
-            <div class="services-image relative w-full min-h-96 min-[800px]:h-full flex justify-center items-center overflow-hidden min-[800px]:order-2 order-3">
+            <div
+                class="services-image relative w-full min-h-96 min-[800px]:h-full flex justify-center items-center overflow-hidden min-[800px]:order-2 order-3">
                 <!-- Background or shadow image -->
                 <img src="./assets/img/object_iphone_1.png"
                     class="absolute inset-0 w-full h-full object-contain scale-100  opacity-80 transition-all duration-500 ease-in-out"
@@ -326,7 +328,8 @@
 
 
             <!-- Right Column -->
-            <div class="services-col services-col-right grid grid-cols-1 min-[500px]:grid-cols-3  min-[800px]:flex min-[800px]:flex-col w-full gap-10 min-[800px]:order-3 order-2">
+            <div
+                class="services-col services-col-right grid grid-cols-1 min-[500px]:grid-cols-3  min-[800px]:flex min-[800px]:flex-col w-full gap-10 min-[800px]:order-3 order-2">
 
                 <div class="service-item service-item-4">
                     <h2 class="service-number text-[40px] font-bold mb-3 border-b-4 leading-14">04</h2>
@@ -352,6 +355,71 @@
             </div>
         </div>
     </section>
+
+    <!-- ================== Featuers ================== -->
+    <section class="w-full flex justify-center font-[Poppins]">
+        <div class="max-w-7xl w-full h-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10  py-20 text-center">
+            <div>
+                <h1 class="text-2xl font-semibold mb-5">CREATIVITY</h1>
+                <span class="text-sm">CREATIVITY IS INVENTING, EXPERIMENTING, GROWING, TAKING RISKS, BREAKING
+                    RULES.</span>
+            </div>
+            <div>
+                <h1 class="text-2xl font-semibold mb-5">UNIQUE</h1>
+                <span class="text-sm">IN ORDER TO BE IRREPLACEABLE ONE, MUST ALWAYS BE DIFFERENT</span>
+            </div>
+            <div>
+                <h1 class="text-2xl font-semibold mb-5">INNOVATION</h1>
+                <span class="text-sm">INNOVATION IS SEEING WHAT EVERYBODY ,HAS SEEN AND THINKING WHAT NOBODY HAS
+                    THOUGHT</span>
+            </div>
+            <div>
+                <h1 class="text-2xl font-semibold mb-5">YOUTH</h1>
+                <span class="text-sm">TRIFID IS A POWERFUL COLLECTIVE OF SOME OF THE YOUNGEST AND MOST INNOVATIVE MINDS
+                    IN THE UAE.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================ Content Section ================ -->
+    <section class="w-full h-[60vh] lg:h-[80vh] flex justify-center items-center font-[Poppins]">
+        <div class="h-full w-full relative">
+            <div class="h-full w-full overflow-hidden relative z-0">
+                <!-- Sliding container -->
+                <div class="slider flex h-full absolute">
+                    <img src="./assets/img/slid1.png" alt="" class="h-full object-cover">
+                    <img src="./assets/img/slid2.jfif" alt="" class="h-full object-cover">
+                    <img src="./assets/img/slid3.png" alt="" class="h-full object-cover">
+                    <img src="./assets/img/slid4.png" alt="" class="h-full object-cover">
+                    <img src="./assets/img/slid5.png" alt="" class="h-full object-cover">
+                </div>
+            </div>
+
+
+            <!-- Optional content -->
+            <div class="flex flex-col justify-center items-center z-10 absolute inset-0 text-center bg-white">
+                <h1 class="font-extrabold text-[clamp(67px, 10vw, 200px)] leading-[1.1] tracking-tight">
+                    Content Is King
+                </h1>
+
+                <button
+                    class="px-10 py-2 rounded-full border-2 border-[#b9b9b9] hover:border-black font-semibold  transition-all duration-300  hover:bg-white">
+                    Our Services
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
 
     <!-- ================== SCRIPTS ================== -->
     <script src="app.js"></script> <!-- Custom JS -->

@@ -167,3 +167,30 @@ tailwind.config = {
         },
     },
 };
+
+// --- Infinite Image Slider ---
+// Using GSAP for smooth animation
+const slider = document.querySelector(".slider");
+const slides = slider.querySelectorAll("img");
+const totalWidth = slider.scrollWidth; // total width of the image set
+
+// Clone all slides once for infinite loop effect
+slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    slider.appendChild(clone);
+});
+
+// Create infinite loop animation
+gsap.to(slider, {
+    x: `-${totalWidth}px`,
+    duration: 20,
+    ease: "none",
+    repeat: -1,
+    modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % totalWidth) // wrap movement
+    }
+});
+
+// Optional: Pause on hover
+slider.addEventListener("mouseenter", () => gsap.globalTimeline.pause());
+slider.addEventListener("mouseleave", () => gsap.globalTimeline.play());

@@ -6,6 +6,7 @@
   from {
     scale: 1.4;
   }
+
   to {
     scale: 1;
   }
@@ -15,18 +16,21 @@
   animation: heroMoveIn 6s ease-out forwards;
 }
 
-
 /* Blobs in Company Profile */
 .blob {
-  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;  animation: breathe 5s infinite ease-in-out;
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
+  animation: breathe 5s infinite ease-in-out;
   z-index: 0;
 }
 
 @keyframes breathe {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
   }
+
   50% {
     transform: scale(1.1);
     border-radius: 60% 50% 40% 60% / 60% 40% 50% 40%;
