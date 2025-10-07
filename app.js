@@ -20,19 +20,19 @@ const heading = document.querySelector('.overlay-heading-text');
 const button = document.querySelector('.overlay-button');
 
 overlayRemover.addEventListener('click', () => {
-  overlayRemoverClicked = !overlayRemoverClicked;
+    overlayRemoverClicked = !overlayRemoverClicked;
 
-  if (overlayRemoverClicked) {
-    // Fade out all overlay elements
-    gsap.to(overlay, { opacity: 0, duration: 0.8, ease: "power2.out" });
-    gsap.to([heading, button], { opacity: 0, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" });
-    document.querySelector('.overlay-remover-icon').classList.replace('fa-arrow-up-right-from-square', 'fa-down-left-and-up-right-to-center');
-  } else {
-    // Fade back in
-    gsap.to(overlay, { opacity: 0.6, duration: 0.8, ease: "power2.inOut" });
-    gsap.to([heading, button], { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.inOut" });
-    document.querySelector('.overlay-remover-icon').classList.replace('fa-down-left-and-up-right-to-center', 'fa-arrow-up-right-from-square');
-  }
+    if (overlayRemoverClicked) {
+        // Fade out all overlay elements
+        gsap.to(overlay, { opacity: 0, duration: 0.8, ease: "power2.out" });
+        gsap.to([heading, button], { opacity: 0, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.out" });
+        document.querySelector('.overlay-remover-icon').classList.replace('fa-arrow-up-right-from-square', 'fa-down-left-and-up-right-to-center');
+    } else {
+        // Fade back in
+        gsap.to(overlay, { opacity: 0.6, duration: 0.8, ease: "power2.inOut" });
+        gsap.to([heading, button], { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "power2.inOut" });
+        document.querySelector('.overlay-remover-icon').classList.replace('fa-down-left-and-up-right-to-center', 'fa-arrow-up-right-from-square');
+    }
 });
 
 // Desktop sidebar toggle
@@ -131,6 +131,9 @@ gsap.to(state, {
     scrollTrigger: { trigger: bigBox, start: "top start", end: "180vh", scrub: true }
 });
 
+window.addEventListener('scroll', () => {
+    console.log(bigBox.scrollTop);
+});
 
 // --- SMOOTH SCROLL ---
 (function smoothScroll({ ease = 0.12, multiplier = 1 } = {}) {
