@@ -12,6 +12,9 @@ const barLines = document.querySelectorAll('.bars-line');
 const desktopSideBarHamburger = document.querySelector('.desktop-side-bar-hamburger');
 const desktopSideBarCloser = document.querySelector('.desktop-side-bar-closer');
 const overlayRemover = document.querySelector('.overlay-remover');
+const phoneImg = document.querySelector('#iPhoneImg');
+const serviceItems = document.querySelectorAll('.service-item');
+const phoneBox = document.querySelector('.phone-box');
 
 // Slider images overlay remover
 let overlayRemoverClicked = false;
@@ -157,8 +160,7 @@ window.addEventListener('scroll', () => {
 })();
 
 // --- Phone images ---
-const phoneImg = document.querySelector('#iPhoneImg');
-const serviceItems = document.querySelectorAll('.service-item');
+
 
 serviceItems.forEach((item, index) => {
     item.addEventListener('mouseenter', () => {
@@ -183,16 +185,29 @@ serviceItems.forEach((item, index) => {
     });
 });
 
-// --- Tailwind custom breakpoint ---
-tailwind.config = {
-    theme: {
-        extend: {
-            screens: {
-                'xs': '320px', // custom min-width breakpoint for 320px
-            },
-        },
-    },
-};
+//   ----- GSAP Scroll-Triggered Blur Animation -----
+if (!bigBox || !phoneBox) {
+  console.warn('bigBox or phoneBox not found');
+} else {
+  let blurred = false;
+
+  function checkBlur() {
+    const top = bigBox.getBoundingClientRect().top;
+    const trigger = -window.innerHeight * 0.4; // when top <= -40vh
+
+    if (top <= trigger && !blurred) {
+      blurred = true;
+      gsap.to(phoneBox, { filter: 'blur(8px)', duration: 0.6, ease: 'power2.out', overwrite: true });
+    } else if (top > trigger && blurred) {
+      blurred = false;
+      gsap.to(phoneBox, { filter: 'blur(0px)', duration: 0.6, ease: 'power2.out', overwrite: true });
+    }
+  }
+
+  window.addEventListener('scroll', checkBlur, { passive: true });
+  // also call once to set correct initial state
+  checkBlur();
+}
 
 // --- Infinite Image Slider ---
 // Using GSAP for smooth animation
