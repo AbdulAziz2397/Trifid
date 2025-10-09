@@ -22,7 +22,7 @@ const overlay = document.querySelector('.black-transparent-overlay');
 const heading = document.querySelector('.overlay-heading-text');
 const button = document.querySelector('.overlay-button');
 
-overlayRemover.addEventListener('click', () => {
+overlayRemover?.addEventListener('click', () => {
     overlayRemoverClicked = !overlayRemoverClicked;
 
     if (overlayRemoverClicked) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- PARALLAX MOUSE MOVE ---
-heroDiv.addEventListener('mousemove', (e) => {
+heroDiv?.addEventListener('mousemove', (e) => {
     const x = (e.clientX / window.innerWidth - 0.5) * 20;
     const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
@@ -88,7 +88,7 @@ window.addEventListener('scroll', () => {
 let navbarSticky = (atTop) => {
     if (window.scrollY > 100 && !isSticky) {
         isSticky = true;
-        navbar.classList.replace('bg-transparent', 'bg-white');
+        navbar?.classList.replace('bg-transparent', 'bg-white');
         gsap.fromTo(navbar, { y: -100 }, { y: 0, duration: 0.8, ease: "power3.out" });
     } else if (atTop && isSticky) {
         isSticky = false;
@@ -112,7 +112,10 @@ function applyClip() {
     0 0, ${state.leftSpread}% 0, 50% ${state.topDepth}% , ${state.rightSpread}% 0,
     100% 0, 100% 100%, 80% 100%, 50% ${state.bottomDepth}%, 20% 100%, 0 100%
   )`;
-    bigBox.style.clipPath = bigBox.style.webkitClipPath = clip;
+    if (bigBox) {
+        bigBox.style.clipPath = clip;
+        bigBox.style.webkitClipPath = clip;
+    }
 }
 applyClip();
 
@@ -131,11 +134,7 @@ gsap.to(state, {
     bottomDepth: 90,       // Straight turns into V shape
     ease: "none",
     onUpdate: applyClip,
-    scrollTrigger: { trigger: bigBox, start: "top start", end: "180vh", scrub: true }
-});
-
-window.addEventListener('scroll', () => {
-    console.log(bigBox.scrollTop);
+    scrollTrigger: { trigger: bigBox, start: "top start", end: "150vh", scrub: true }
 });
 
 // --- SMOOTH SCROLL ---
@@ -186,37 +185,39 @@ serviceItems.forEach((item, index) => {
 });
 
 //   ----- GSAP Scroll-Triggered Blur Animation -----
-if (!bigBox || !phoneBox) {
-  console.warn('bigBox or phoneBox not found');
-} else {
-  let blurred = false;
+if (bigBox || phoneBox) {
+    if (!bigBox || !phoneBox) {
+        console.warn('bigBox or phoneBox not found');
+    } else {
+        let blurred = false;
 
-  function checkBlur() {
-    const top = bigBox.getBoundingClientRect().top;
-    const trigger = -window.innerHeight * 0.4; // when top <= -40vh
+        function checkBlur() {
+            const top = bigBox.getBoundingClientRect().top;
+            const trigger = -window.innerHeight * 0.4; // when top <= -40vh
 
-    if (top <= trigger && !blurred) {
-      blurred = true;
-      gsap.to(phoneBox, { filter: 'blur(8px)', duration: 0.6, ease: 'power2.out', overwrite: true });
-    } else if (top > trigger && blurred) {
-      blurred = false;
-      gsap.to(phoneBox, { filter: 'blur(0px)', duration: 0.6, ease: 'power2.out', overwrite: true });
+            if (top <= trigger && !blurred) {
+                blurred = true;
+                gsap.to(phoneBox, { filter: 'blur(8px)', duration: 0.6, ease: 'power2.out', overwrite: true });
+            } else if (top > trigger && blurred) {
+                blurred = false;
+                gsap.to(phoneBox, { filter: 'blur(0px)', duration: 0.6, ease: 'power2.out', overwrite: true });
+            }
+        }
+
+        window.addEventListener('scroll', checkBlur, { passive: true });
+        // also call once to set correct initial state
+        checkBlur();
     }
-  }
-
-  window.addEventListener('scroll', checkBlur, { passive: true });
-  // also call once to set correct initial state
-  checkBlur();
 }
 
 // --- Infinite Image Slider ---
 // Using GSAP for smooth animation
 const slider = document.querySelector(".slider");
-const slides = slider.querySelectorAll("img");
-const totalWidth = slider.scrollWidth; // total width of the image set
+const slides = slider?.querySelectorAll("img");
+const totalWidth = slider?.scrollWidth; // total width of the image set
 
 // Clone all slides once for infinite loop effect
-slides.forEach(slide => {
+slides?.forEach(slide => {
     const clone = slide.cloneNode(true);
     slider.appendChild(clone);
 });
@@ -233,5 +234,10 @@ gsap.to(slider, {
 });
 
 // Optional: Pause on hover
-slider.addEventListener("mouseenter", () => gsap.globalTimeline.pause());
-slider.addEventListener("mouseleave", () => gsap.globalTimeline.play());
+if (slider) {
+  // Pause all GSAP animations on hover
+  slider.addEventListener("mouseenter", () => gsap.globalTimeline.pause());
+
+  // Resume all GSAP animations when hover ends
+  slider.addEventListener("mouseleave", () => gsap.globalTimeline.resume());
+}
