@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Tailwind (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- GSAP + ScrollTrigger -->
+    <!-- ========== GSAP + ScrollTrigger ========== -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-    <!-- Custom CSS -->
+    <!-- ========== Custom CSS ========== -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="threeDcube.css">
 
-    <!-- Google Fonts (Poppins & Inter) -->
+    <!-- ========== Tailwind (CDN) ========== -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
+
+    <!-- ========== Google Fonts ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
@@ -31,78 +34,73 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
 
-    <!-- Google Material Icons (for search icon) -->
+    <!-- ========== Google Material Icons ========== -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&icon_names=search" />
 
-    <!-- Fontawesom CDN -->
+    <!-- ========== Font Awesome CDN ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> <!-- TailwindCSS -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <!-- GSAP -->
+    <!-- ========== Scripts ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <!-- GSAP-->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 
-    <!-- Title -->
+    <!-- ========== Title ========== -->
     <title>Services - Trifid Media</title>
 </head>
 
-<body class="bg-amber-100">
-    <!-- ================== NAVBAR ================== -->
-    <nav id="navbar" class="
-        w-full h-20 lg:h-24
-        flex fixed justify-center items-center bg-transparent font-[Poppins] z-40">
-        <div
-            class="max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10  flex items-center justify-between relative">
-            <!-- Logo -->
+<body>
 
+    <!-- ================== NAVBAR ================== -->
+    <nav id="navbar"
+        class="w-screen h-20 lg:h-24 flex fixed justify-center items-center bg-transparent font-[Poppins] z-40">
+
+        <div
+            class="max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 flex items-center justify-between relative">
+
+            <!-- Logo -->
             <div class="relative">
                 <img src="./assets/img/logo.jpg" class="h-12 cursor-pointer" alt="Trifid Media Logo">
             </div>
 
             <!-- Desktop Navigation Menu -->
-            <ul class="nav-menu hidden lg:flex gap-[38px] font-semibold text-[15px] ">
+            <ul class="nav-menu hidden lg:flex gap-[38px] font-semibold text-[15px]">
 
                 <!-- Menu Items -->
-                <li class="relative inline-block leading-8 cursor-pointer
-                 after:content-[''] after:absolute after:left-0 after:bottom-0
-                 after:h-[2px] after:bg-black hover:after:w-full">
+                <li
+                    class="relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-black hover:after:w-full">
                     <a href="index.html">Trifid Media</a>
                 </li>
 
-                <li class="relative inline-block leading-8 cursor-pointer
-                 after:content-[''] after:absolute after:left-0 after:bottom-0
-                 after:h-[2px] after:bg-black after:w-full">
+                <li
+                    class="relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-black after:w-full">
                     <a href="services.html">Services</a>
                 </li>
 
-                <li class="relative inline-block leading-8 cursor-pointer
-                 after:content-[''] after:absolute after:left-0 after:bottom-0
-                 after:h-[2px] after:bg-black hover:after:w-full">
+                <li
+                    class="relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-black hover:after:w-full">
                     <a href="#">Web/App Design</a>
                 </li>
 
-                <li class="relative inline-block leading-8 cursor-pointer
-                 after:content-[''] after:absolute after:left-0 after:bottom-0
-                 after:h-[2px] after:bg-black hover:after:w-full">
+                <li
+                    class="relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-black hover:after:w-full">
                     <a href="#">TRIFID Club</a>
                 </li>
 
-                <li class="relative inline-block leading-8 cursor-pointer
-            after:content-[''] after:absolute after:left-0 after:bottom-0
-            after:h-[2px] after:bg-black hover:after:w-full">
+                <li
+                    class="relative inline-block leading-8 cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:bg-black hover:after:w-full">
                     <a href="#">Get in touch</a>
                 </li>
 
                 <!-- Search & Hamburger (Desktop) -->
                 <li>
                     <ul class="gap-10 font-semibold text-sm hidden lg:flex">
+
                         <li class="cursor-pointer relative top-2">
                             <img class="size-5" src="./assets/icon/dripicons-by-amit-jakhu/SVG/search.svg"
                                 alt="search icon">
@@ -119,29 +117,37 @@
                                     class="relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
                             </div>
                         </li>
+
                     </ul>
                 </li>
+
+                <!-- Desktop Sidebar -->
                 <li
                     class="desktop-side-bar fixed top-0 h-dvh bg-[#fed332] w-sm -right-96 py-16 z-10 flex flex-col items-center gap-5 transition-all duration-700">
+
                     <span
                         class="desktop-side-bar-closer size-8 flex justify-center items-center relative -top-8 -right-[150px] bg-[#000000] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
                         <i class="fa-solid fa-xmark text-xl text-white"></i>
                     </span>
+
                     <img src="./assets/img/logo.jpg" class="w-62 my-10" alt="">
                     <span class="uppercase text-[16px] leading-5 w-46 font-normal">
                         WE CREATE POWERFUL, INNOVATIVE, FUN, AND MEMORABLE CONTENT.
                     </span>
+
                     <span
                         class="size-10 flex justify-center items-center rounded-full bg-[#00000042] hover:bg-blue-900 transition-all duration-300 ease-in-out cursor-pointer">
                         <i class="fa-brands fa-instagram text-2xl text-white"></i>
                     </span>
+
                 </li>
+
             </ul>
 
             <!-- Hamburger Icon (Mobile) -->
             <div id="hamburger"
                 class="hamburger-icon relative lg:hidden flex items-center justify-center bg-black cursor-pointer w-8 h-8">
-                <div class=" bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
+                <div class="bars-container w-4 h-3 flex flex-col justify-between overflow-hidden">
                     <span
                         class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
                     <span class="block h-0.5 bg-white rounded"></span>
@@ -149,12 +155,13 @@
                         class="bars-line relative left-0 block h-0.5 bg-white rounded transition-all duration-500"></span>
                 </div>
             </div>
+
         </div>
     </nav>
 
-    <!-- Mobile Navigation Menu -->
+    <!-- ================== MOBILE MENU ================== -->
     <div
-        class="mobile-menu fixed pt-[70px] top-0 left-0 w-full -translate-y-full bg-white overflow-hidden transition-all duration-700 z-20  flex justify-center items-start lg:hidden">
+        class="mobile-menu fixed pt-[70px] top-0 left-0 w-full -translate-y-full bg-white overflow-hidden transition-all duration-700 z-20 flex justify-center items-start lg:hidden">
         <ul
             class="nav-menu-mobile max-[639px]:px-5 max-[639px]:w-full sm:w-xl md:w-3xl md:px-10 lg:w-full lg:px-10 flex flex-col font-semibold text-[15px]">
 
@@ -167,7 +174,7 @@
                 <a href="services.html">Services</a>
             </li>
 
-            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b ">
+            <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
                 <a href="#">Web/App Design</a>
             </li>
 
@@ -178,9 +185,10 @@
             <li class="relative inline-block leading-8 cursor-pointer py-1 border-b">
                 <a href="#">Get in touch</a>
             </li>
+
         </ul>
     </div>
-    <!-- ================== NAVBAR END ================== -->
+
 
     <!-- ================== Services Hero ================== -->
     <section class="services-hero w-full relative h-screen bg-[#007aff] flex justify-center items-center">
@@ -192,94 +200,101 @@
             <!-- slide one -->
             <div class="slide-content sld-con-1 w-full h-full hidden flex-col gap-4">
 
-                <!--  Title -->
+                <!-- Title -->
                 <span class="title font-['Urbanist'] font-bold text-transparent leading-none [-webkit-text-stroke:1px_#fff]
-                    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Social Media
                 </span>
 
                 <!-- Heading -->
                 <span class="heading font-['Urbanist'] font-bold text-white leading-none
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Management
                 </span>
+
                 <span class="fa-solid fa-chevron-right text-[8px] text-white left-0 top-1 min-[900px]:hidden"></span>
 
                 <!-- Description -->
-                <span class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28
-                            max-[479px]:hidden">
-                    <!-- <span class="fa-solid fa-chevron-right absolute top-1 max-[899px]:hidden"></span> -->
+                <span
+                    class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28 max-[479px]:hidden">
                     It will be on every screen. Trifid Media is a social media management service that helps businesses
                     and organizations increase
                     their online presence and engage with their audience. We provide a range of services including
-                    content creation,
-                    community management, and social media advertising. Our team of experts will work with you to
-                    develop a customized
-                    strategy that aligns with your goals and targets your ideal audience. Whether you're looking to
-                    boost brand awareness,
-                    drive website traffic, or increase sales, we have the tools and expertise to help you achieve your
-                    objectives.
-                    With Trifid Media, you can focus on running your business while we take care of your social media
-                    needs.
+                    content creation, community
+                    management, and social media advertising. Our team of experts will work with you to develop a
+                    customized strategy
+                    that aligns with your goals and targets your ideal audience. Whether you're looking to boost brand
+                    awareness, drive
+                    website traffic, or increase sales, we have the tools and expertise to help you achieve your
+                    objectives. With Trifid Media,
+                    you can focus on running your business while we take care of your social media needs.
                 </span>
             </div>
 
             <!-- slide two -->
             <div class="slide-content sld-con-2 w-full h-full hidden flex-col gap-4">
 
-                <!--  Title -->
+                <!-- Title -->
                 <span class="title font-['Urbanist'] font-bold text-transparent leading-none [-webkit-text-stroke:1px_#fff]
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     TikTok
                 </span>
 
                 <!-- Heading -->
                 <span class="heading font-['Urbanist'] font-bold text-white leading-none
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Management
                 </span>
+
                 <span class="fa-solid fa-chevron-right text-[8px] text-white left-0 top-1 min-[900px]:hidden"></span>
 
                 <!-- Description -->
-                <span class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28
-                            max-[479px]:hidden">
-                    <!-- <span class="fa-solid fa-chevron-right absolute left-0 top-1 max-[899px]:hidden"></span> -->
-                    tap into the power of this rapidly growing social media platform. Our team of experts will help you
-                    create engaging, shareable content that resonates with the TikTok community, and develop a strategy
-                    to increase your reach and engagement on the platform. We will help you optimize your profile,
-                    identify trending topics and hashtags, and create a content calendar that keeps your brand top of
-                    mind. Whether you want to increase brand awareness, drive website traffic, or drive sales, our
-                    TikTok management service has you covered. With Trifid Media, you can focus on your core business
-                    while we take care of your TikTok presence.
+                <span
+                    class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28 max-[479px]:hidden">
+                    Tap into the power of this rapidly growing social media platform. Our team of experts will help you
+                    create engaging,
+                    shareable content that resonates with the TikTok community, and develop a strategy to increase your
+                    reach and
+                    engagement on the platform. We will help you optimize your profile, identify trending topics and
+                    hashtags, and create
+                    a content calendar that keeps your brand top of mind. Whether you want to increase brand awareness,
+                    drive website
+                    traffic, or drive sales, our TikTok management service has you covered. With Trifid Media, you can
+                    focus on your core
+                    business while we take care of your TikTok presence.
                 </span>
             </div>
 
             <!-- slide three -->
             <div class="slide-content sld-con-3 w-full h-full hidden flex-col gap-4">
 
-                <!--  Title -->
+                <!-- Title -->
                 <span class="title font-['Urbanist'] font-bold text-transparent leading-none [-webkit-text-stroke:1px_#fff]
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Content
                 </span>
 
                 <!-- Heading -->
                 <span class="heading font-['Urbanist'] font-bold text-white leading-none
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Production
                 </span>
+
                 <span class="fa-solid fa-chevron-right text-[8px] text-white left-0 top-1 min-[900px]:hidden"></span>
 
                 <!-- Description -->
-                <span class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28
-                            max-[479px]:hidden">
-                    <!-- <span class="fa-solid fa-chevron-right absolute left-0 top-1 max-[899px]:hidden"></span> -->
+                <span
+                    class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28 max-[479px]:hidden">
                     Trifid Media offers a comprehensive content production service to help businesses and organizations
-                    elevate their brand and engage with their audience. Our team of creative professionals will work
-                    with you to develop a customized content strategy that aligns with your goals and objectives. We
-                    specialize in creating high-quality, visually-appealing content that tells your story and drives
-                    engagement. From concept development to production and post-production, we handle every aspect of
-                    the content creation process. We offer services such as video production, photography, podcast
+                    elevate their brand
+                    and engage with their audience. Our team of creative professionals will work with you to develop a
+                    customized content
+                    strategy that aligns with your goals and objectives. We specialize in creating high-quality,
+                    visually-appealing content
+                    that tells your story and drives engagement. From concept development to production and
+                    post-production, we handle
+                    every aspect of the content creation process. We offer services such as video production,
+                    photography, podcast
                     production, and more to create a variety of content types to fit your needs.
                 </span>
             </div>
@@ -287,36 +302,40 @@
             <!-- slide four -->
             <div class="slide-content sld-con-4 w-full h-full hidden flex-col gap-4">
 
-                <!--  Title -->
+                <!-- Title -->
                 <span class="title font-['Urbanist'] font-bold text-transparent leading-none [-webkit-text-stroke:1px_#fff]
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Influencer
                 </span>
 
                 <!-- Heading -->
                 <span class="heading font-['Urbanist'] font-bold text-white leading-none
-                            text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
+        text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl">
                     Management
                 </span>
+
                 <span class="fa-solid fa-chevron-right text-[8px] text-white left-0 top-1 min-[900px]:hidden"></span>
 
                 <!-- Description -->
-                <span class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28
-                            max-[479px]:hidden">
-                    <!-- <span class="fa-solid fa-chevron-right absolute left-0 top-1 max-[899px]:hidden"></span> -->
+                <span
+                    class="description relative text-white text-[8px] xl:text-sm w-full min-[900px]:px-28 max-[479px]:hidden">
                     Our team of experts will work with you to identify and engage with social media influencers who
-                    align with your brand and speak to your target audience. We will help you create and execute
-                    influencer campaigns that drive awareness, engagement, and conversions. From identifying
-                    influencers, crafting campaign strategies, negotiating partnerships, and tracking performance, we
-                    handle every aspect of the influencer marketing process.
-                    We work with influencers across various social media platforms such as Instagram, TikTok, Youtube,
-                    and more, to ensure that you reach your desired audience. Whether you're looking to increase brand
-                    awareness, drive website traffic or generate leads
+                    align with your brand
+                    and speak to your target audience. We will help you create and execute influencer campaigns that
+                    drive awareness,
+                    engagement, and conversions. From identifying influencers, crafting campaign strategies, negotiating
+                    partnerships, and
+                    tracking performance, we handle every aspect of the influencer marketing process. We work with
+                    influencers across
+                    various social media platforms such as Instagram, TikTok, Youtube, and more, to ensure that you
+                    reach your desired
+                    audience. Whether you're looking to increase brand awareness, drive website traffic or generate
+                    leads.
                 </span>
             </div>
         </div>
 
-
+        <!-- Progress Indicator -->
         <div class="h-72 absolute left-15 lg:flex flex-col items-center hidden">
             <span class="text-lg font-['Manrope'] text-white progress-start">01</span>
             <div class="bg-white/30 h-full w-0.5">
@@ -325,126 +344,107 @@
             <span class="text-lg font-['Manrope'] text-white">04</span>
         </div>
 
+        <!-- Navigation Arrows -->
         <div
             class="w-full bg-black p-4 lg:p-6 absolute flex gap-20 bottom-0 max-w-xs min-[480px]:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-5xl 2xl:max-w-6xl text-white">
             <i class="fa-solid fa-chevron-up cursor-pointer"></i>
             <i class="fa-solid fa-chevron-down cursor-pointer"></i>
         </div>
+        
+        <div class="slide-duration-line h-0 border top-0 absolute border-white/50 right-0"></div>
     </section>
 
     <!-- ====================== Video1 Section ====================== -->
     <section
-        class="w-full h-60 min-[425px]:h-72 sm:h- md:h-[395px] lg:h-[495px] xl:h-[600px] relative flex justify-center items-center gap-2">
-        <video src="./assets/vid/TRIFID 1 - Trifid Media (1080p, h264).mp4" autoplay loop muted playsinline
-            class="size-full object-cover z-0 absolute inset-0">
+        class="w-full h-[clamp(240px,25vw+150px,600px)] relative flex justify-center items-center gap-2 overflow-hidden">
+
+        <video autoplay muted
+            class="absolute inset-0 object-cover z-0">
+            <source src="./assets/vid/vid1.mp4">
         </video>
-        <div class="absolute inset-0 size-full bg-black/50 z-10"></div>
+
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
         <div class="flex flex-col text-center z-20">
-            <span class="on-vide-heading font-[Raleway] text-[clamp(30px,10vw,70px)] text-white font-bold px-2">Content
-                Done Right</span>
-            <span class="on-vide-text text-sm text-white uppercase">Creating For the new Generation</span>
+            <span class="on-video-heading font-[Raleway] text-[clamp(30px,10vw,70px)] text-white font-bold px-2">
+                Content Done Right
+            </span>
+            <span class="on-video-text text-sm text-white uppercase">
+                Creating For the new Generation
+            </span>
         </div>
     </section>
 
+
     <!-- ====================== Video2 Section ====================== -->
     <section
-        class="w-full h-60 min-[425px]:h-72 sm:h- md:h-[395px] lg:h-[495px] xl:h-[600px] relative flex justify-center items-center gap-2">
-        <video
-            src="./assets/vid/BCC RIPPLE OVERLAY  RIPPLE OVERLAY  BACKGROUND VIDEO  AFTER EFFECTS  ALIGHT MOTION  CAPCUT - FIRST SHOT (1080p, h264).mp4"
-            autoplay loop muted playsinline class="size-full object-cover z-0 absolute inset-0">
+        class="w-full h-[clamp(240px,25vw+150px,600px)] relative flex justify-center items-center gap-2 overflow-hidden">
+
+        <video autoplay muted
+            class=" object-cover z-0 absolute inset-0">
+             <source src="./assets/vid/vid2.mp4">
         </video>
-        <div class="absolute inset-0 size-full bg-black/50 z-10"></div>
+
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
         <div class="flex flex-col text-center z-20">
-            <span class="on-vide-heading font-[Raleway] text-[clamp(30px,10vw,70px)] text-white font-bold px-2">Social
+            <span class="on-video-heading font-[Raleway] text-[clamp(30px,10vw,70px)] text-white font-bold px-2">Social
                 Media Redifined</span>
-            <span class="on-vide-text text-sm text-white uppercase">Creating For the new Generation</span>
+            <span class="on-video-text text-sm text-white uppercase">Creating For the new Generation</span>
         </div>
     </section>
 
     <!-- =================================================== -->
-<section class="w-full h-[clamp(512px,80vh,900px)] overflow-hidden bg-gray-100">
-
-    <div class="w-full h-screen flex justify-between relative -rotate-15">
-        
-        <main class="w-[600px] h-[200px] [perspective:1000px] absolute left-0">
-            <div
-                class="cube w-[600px] h-[200px] relative [transform-style:preserve-3d] [transform:rotateY(0deg)_rotateX(0deg)]">
-
-                <!-- Front -->
-                <div
-                    class="absolute w-[600px] h-[200px] bg-black/60 text-white flex justify-center items-center border-2 border-black [transform:translateZ(100px)]">
-                    Front</div>
-
-                <!-- Back -->
-                <div
-                    class="absolute w-[600px] h-[200px] bg-black/40 text-white flex justify-center items-center border-2 border-black [transform:rotateY(180deg)_translateZ(100px)]">
-                    Back</div>
-
-                <!-- Right -->
-                <div
-                    class="absolute w-[200px] h-[200px] bg-black/50 text-white flex justify-center items-center border-2 border-black [transform:rotateY(90deg)_translateZ(500px)]">
-                    Right</div>
-
-                <!-- Left -->
-                <div
-                    class="absolute w-[200px] h-[200px] bg-black/50 text-white flex justify-center items-center border-2 border-black [transform:rotateY(-90deg)_translateZ(100px)]">
-                    Left</div>
-
-                <!-- Top -->
-                <div
-                    class="absolute w-[600px] h-[200px] bg-black/40 text-white flex justify-center items-center border-2 border-black [transform:rotateX(90deg)_translateZ(100px)]">
-                    Top</div>
-
-                <!-- Bottom -->
-                <div
-                    class="absolute w-[600px] h-[200px] bg-black/40 text-white flex justify-center items-center border-2 border-black [transform:rotateX(-90deg)_translateZ(100px)]">
-                    Bottom</div>
-            </div>
-        </main>
-        <main class="w-[600px] h-[200px] [perspective:1000px] absolute right-0">
-            <div
-                class="cube w-[600px] h-[200px] relative [transform-style:preserve-3d] [transform:rotateY(0deg)_rotateX(0deg)] -rotate-[0deg]">
-
-                <!-- Front -->
-                <div
-                    class="absolute w-[600px] h-[200px] bg-black/60 text-white flex justify-center items-center border-2 border-black [transform:translateZ(100px)]">
-                    Front</div>
-                    
-                <!-- Back -->
-                <div
-                    class="absolute w-[600px] h-[200px] bg-black/40 text-white flex justify-center items-center border-2 border-black [transform:rotateY(180deg)_translateZ(100px)]">
-                    Back</div>
-
-                <!-- Right -->
-                <div
-                    class="absolute w-[200px] h-[200px] bg-black/50 text-white flex justify-center items-center border-2 border-black [transform:rotateY(90deg)_translateZ(500px)]">
-                    Right</div>
-
-                <!-- Left -->
-                <div
-                    class="absolute w-[200px] h-[200px] bg-black/50 text-white flex justify-center items-center border-2 border-black [transform:rotateY(-90deg)_translateZ(100px)]">
-                    Left</div>
-
-                <!-- Top -->
-                <div
-                class="absolute w-[600px] h-[200px] bg-black/40 text-white flex justify-center items-center border-2 border-black [transform:rotateX(90deg)_translateZ(100px)]">
-                Top</div>
-                
-                <!-- Bottom -->
-                <div
-                class="absolute w-[600px] h-[200px] bg-black/40 text-white flex justify-center items-center border-2 border-black [transform:rotateX(-90deg)_translateZ(100px)]">
-                Bottom</div>
-            </div>
-        </main>
-        
+    <div class="threeD-cubes w-full max-w-screen h-[400px] min-[425px]:h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] min-[1536px]:h-[900px]  overflow-hidden bg-[#f49f6d] flex justify-center">
+        <div class=" w-full h-full relative border-2 border-red-700 min-w-[1535px] 2xl:min-w-[2560px]">
+            <div class="threeD-cube-1"></div>
+            <div class="threeD-cube-2"></div>
+        </div>
     </div>
-</section>
 
-
+    <section class="footer h-96 z-0 bg-transparent">
+        <div class="bg-black h-96 w-full right-0 left-0"></div>
+    </section>
+    
+    
     <!-- ================== SCRIPTS ================== -->
-    <script src="app.js"></script> <!-- Custom JS -->
-    <script src="services.js"></script> <!-- Services Page JS -->
-
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    
 </body>
 
 </html>
+<!-- <div class="w-[100%] h-full absolute flex justify-between items-center -rotate-18">
+    <main class="w-[600px] h-[200px] [perspective:1000px]">
+        <div class="cube w-[600px] h-[200px] relative [transform-style:preserve-3d] [transform:rotateY(-10deg)_rotateX(50deg)]">
+            <div class="absolute w-[900px] h-[250px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:translateZ(125px)]">
+                Front</div>
+            <div class="absolute w-[600px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateY(180deg)_translateZ(100px)]">
+                Back</div>
+            <div class="absolute w-[200px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateY(90deg)_translateZ(500px)]">
+                Right</div>
+            <div class="absolute w-[200px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateY(-90deg)_translateZ(100px)]">
+                Left</div>
+            <div class="absolute w-[600px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateX(90deg)_translateZ(100px)]">
+                Top</div>
+            <div class="absolute w-[900px] h-[250px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateX(-90deg)_translateZ(125px)]">
+                Bottom</div>
+        </div>
+    </main>
+    <main class="w-[600px] h-[200px] [perspective:1000px]">
+        <div class="cube w-[600px] h-[200px] relative [transform-style:preserve-3d] [transform:rotateY(40deg)_rotateX(60deg)]">
+            <div class="absolute w-[900px] h-[250px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:translateZ(125px)]">
+                Front</div>
+            <div class="absolute w-[600px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateY(180deg)_translateZ(100px)]">
+                Back</div>
+            <div class="absolute w-[200px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateY(90deg)_translateZ(500px)]">
+            </div>
+            <div class="absolute w-[250px] h-[250px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateY(-90deg)_translateZ(125px)]">
+                Left</div>
+            <div class="absolute w-[600px] h-[200px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateX(90deg)_translateZ(100px)]">
+                Top</div>
+            <div class="absolute w-[900px] h-[250px] bg-[#fbd77e] text-white flex justify-center items-center border-2 border-black [transform:rotateX(-90deg)_translateZ(125px)]">
+                Bottom</div>
+        </div>
+    </main>
+</div> -->

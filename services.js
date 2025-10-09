@@ -5,9 +5,19 @@ const servicesHero = document.querySelector('.services-hero');
 const progressLine = document.querySelector('.progress-line');
 const progressStart = document.querySelector('.progress-start');
 const slideContents = document.querySelectorAll('.slide-content')
+const slideDurationLine = document.querySelectorAll('.slide-duration-line')
+
+// auto slide change
+
+setTimeout(()=>{
+    // chevronDown.;
+},5000)
 
 
-// 
+
+
+
+// ---------------------------------------------
 let bgNumber = 1;
 const bgColors = ['#007aff', '#ff3a2d', '#ffcc00', '#4cd964'];
 const heights = ['25%', '50%', '75%', '100%']; // heights in percentage
@@ -21,11 +31,11 @@ function animateNumber(newNumber) {
     const tl = gsap.timeline();
 
     tl.to(progressStart, {
-        opacity: 0,
-        y: -10,
-        duration: 0.2,
-        ease: "power2.in",
-    })
+            opacity: 0,
+            y: -10,
+            duration: 0.2,
+            ease: "power2.in",
+        })
         .add(() => {
             progressStart.textContent = String(newNumber).padStart(2, '0');
         })
@@ -47,29 +57,34 @@ function updateVisuals() {
     });
 
     // Animate height smoothly
-    gsap.fromTo(progressLine,
-        {
-            height: 0
-        }
-        , {
-            height: heights[bgNumber - 1],
-            duration: 1,
-            ease: "power2.inOut"
-        });
+    gsap.fromTo(progressLine, {
+        height: 0
+    }, {
+        height: heights[bgNumber - 1],
+        duration: 1,
+        ease: "power2.inOut"
+    });
 
+    
     // Animate number text
     animateNumber(bgNumber);
-
-
 }
+
+gsap.to( slideDurationLine,{
+    height: "100%",
+    duration: 8,
+    ease: "none",
+    repeat: -1,
+    onRepeat: ()=> chevronDown.click(),
+})
+
 
 //  services hero content changer
 let contentChanger = () => {
     slideContents.forEach((content, idx) => {
         if (idx == (bgNumber - 1)) {
             content.classList.replace('hidden', 'flex')
-        }
-        else {
+        } else {
             content.classList.replace('flex', 'hidden')
         }
     })
@@ -84,8 +99,7 @@ chevronDown.addEventListener('click', () => {
     if (bgNumber > 4) bgNumber = 1;
     updateVisuals();
     contentChanger();
-    animateSplitText([".title", ".heading", ".description"], "up");   // from top to bottom
-
+    animateSplitText([".title", ".heading", ".description"], "down"); // from bottom to top
 });
 
 // Up button
@@ -94,7 +108,7 @@ chevronUp.addEventListener('click', () => {
     if (bgNumber < 1) bgNumber = 4;
     updateVisuals();
     contentChanger();
-    animateSplitText([".title", ".heading", ".description"], "down"); // from bottom to top
+    animateSplitText([".title", ".heading", ".description"], "up"); // from top to bottom
 });
 
 
@@ -110,8 +124,8 @@ function animateSplitText(selector, direction = "up") {
         onSplit: (self) => {
             gsap.from(self.lines, {
                 y: yValue,
-                duration: 0.5,
-                stagger: 0.05
+                duration: 1,
+                
             });
         }
     });
@@ -120,7 +134,7 @@ animateSplitText([".title", ".heading", ".description"], "down"); // from bottom
 
 
 // Smooth intro animation for video text elements
-gsap.from([".on-vide-heading", ".on-vide-text"], {
+gsap.from([".on-video-heading", ".on-video-text"], {
     scale: 1.5,
     filter: "blur(10px)",
     //   opacity: 0,
@@ -129,4 +143,3 @@ gsap.from([".on-vide-heading", ".on-vide-text"], {
     ease: "power3.out",
     stagger: 0.2
 });
-
